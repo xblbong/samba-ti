@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('users', function (Blueprint $table) {
-            $table->integer('id')->increments()->primary();
+            $table->increments('id'); // Primary key dengan auto_increment
             $table->string('name');
-            $table->integer('nim', 11);
+            $table->integer('nim')->unique(); // Kolom nim tanpa auto_increment, dengan constraint unique
             $table->string('email')->unique();
             $table->string('foto', 255);
             $table->string('status', 255);
             $table->string('validate', 50);
-            $table->integer('id_kelas', 11);
+            $table->integer('id_kelas'); // Kolom id_kelas tanpa auto_increment
             $table->string('no_hp', 255);
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
