@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateKelasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,9 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kelas', function (Blueprint $table) {
-            $table->integer('id_kelas')->primary();
-            $table->string('nama_kelas');
-            $table->timestamps();
+            $table->increments('id_kelas'); // Primary key dengan auto_increment
+            $table->string('nama_kelas'); // Kolom nama_kelas
+            $table->timestamps(); // Kolom created_at dan updated_at
         });
     }
 
@@ -25,4 +25,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('kelas');
     }
-};
+}
+

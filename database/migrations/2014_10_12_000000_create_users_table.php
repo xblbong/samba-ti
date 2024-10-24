@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->integer('nim')->unique(); // Kolom nim tanpa auto_increment, dengan constraint unique
             $table->string('email')->unique();
-            $table->string('foto', 255);
+            $table->string('foto', 255)->nullable();
             $table->string('status', 255);
             $table->string('validate', 50);
             $table->integer('id_kelas'); // Kolom id_kelas tanpa auto_increment
