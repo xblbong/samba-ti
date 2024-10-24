@@ -34,3 +34,8 @@
 # How to run
 - npm run dev
 - php artisan serve
+
+# Login
+To log in, use the email and password following the seeder :
+Email = hmpstiub@gmail.com
+Password 12345678
