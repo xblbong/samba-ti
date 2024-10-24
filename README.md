@@ -14,6 +14,15 @@
   - DB_USERNAME=root
   - DB_PASSWORD=
 - Third, you have to create a new database with a database name according to your configuration in .env file
+- Fourth, you have to config ure the smtp on env like this
+   - MAIL_MAILER=smtp
+   - MAIL_HOST=smtp.gmail.com
+   - MAIL_PORT=465
+   - MAIL_USERNAME=hmpstiub@gmail.com
+   - MAIL_PASSWORD=dvhgpmsmkbdweabd
+   - MAIL_ENCRYPTION=tls
+   - MAIL_FROM_ADDRESS="hmpstiub@gmail.com"
+   - MAIL_FROM_NAME="${APP_NAME}"
 
 - composer install
 - npm install
