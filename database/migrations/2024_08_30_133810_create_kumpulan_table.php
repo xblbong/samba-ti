@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('kumpulan', function (Blueprint $table) {
             $table->integer('id_kumpulan')->increments()->primary();
-            $table->integer('nim');
+            $table->integer('id_user');
             $table->integer('id_pelajaran');
             $table->integer('nilai');
             $table->string('status');
