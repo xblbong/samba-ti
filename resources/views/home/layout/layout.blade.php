@@ -13,61 +13,67 @@
         @vite('resources/css/app.css', 'resources/js/app.js')
     </head>
     <body class="bg-[#021526]">
-        <nav class="w-full flex fixed top-0 z-[999] transition-all duration-300">
+        <nav class="w-full flex scroll h-[110px] top-5">
 
-            <div class="flex navbar-fixed scroll py-3 px-36 max-[1300px]:px-20 max-[1100px]:px-10 w-full">
-                <img src="{{ asset('assets/img/logo.png') }}" alt="" class="w-24">
+            <div class="flex py-3 z-[999] px-36 max-[1300px]:px-20 max-[728px]:px-5 max-[1100px]:px-10 mx-auto w-full max-[1300px]:text-xl text-2xl navbar-fixed">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="" class="max-w-[100%] h-auto">
                 <div class="flex text-white font-semibold ml-auto gap-10 items-center">
-                    <a href="{{ route('main') }}" class="{{ set_home_active(['main']) }} navbar-item-active max-[1300px]:text-2xl text-3xl">Home</a>
-                    <a href="{{ route('about') }}" class="{{ set_home_active(['about']) }} navbar-item-active max-[1300px]:text-2xl text-3xl">About</a>
-                    <a href="{{ route('technotion') }}" class="{{ set_home_active(['technotion']) }} navbar-item-active max-[1300px]:text-2xl text-3xl">Technotion</a>
-                    <a href="{{ route('department') }}" class="{{ set_home_active(['department']) }} navbar-item-active max-[1300px]:text-2xl text-3xl">Department</a>
-                    <a href="{{ route('classroom') }}" class="{{ set_home_active(['clasroom']) }} navbar-item-active max-[1300px]:text-2xl text-3xl">Classroom</a>
+                    <a href="{{ route('main') }}" class="{{ set_home_active(['main']) }} navbar-item-active font-raleway font-extrabold transition duration-200 hover:text-[#F8CF35]">Home</a>
+                    <a href="{{ route('about') }}" class="{{ set_home_active(['about']) }} navbar-item-active font-raleway font-extrabold transition duration-200 hover:text-[#F8CF35]">About</a>
+                    <a href="{{ route('technotion') }}" class="{{ set_home_active(['technotion']) }} navbar-item-active font-raleway font-extrabold transition duration-200 hover:text-[#F8CF35]">Technotion</a>
+                    <a href="{{ route('classroom') }}" class="{{ set_home_active(['clasroom']) }} navbar-item-active font-raleway font-extrabold transition duration-200 hover:text-[#F8CF35]">Classroom</a>
+                    <a href="{{ route('department') }}" class="{{ set_home_active(['department']) }} navbar-item-active font-raleway font-extrabold transition duration-200 hover:text-[#F8CF35]">Department</a>
                 </div>
             </div>
 
-            <div class="min-[900px]:hidden z-[999] flex mt-8 mr-10">
-                <button id="hamburger_home" name="hamburger" type="button" class="hamburger block absolute right-3 bg-yellow-500 w-[2.5rem] h-11 items-center justify-center rounded z-[99999]">
-                  <span class="hamburger-line transition duration-300 ease-in-out origin-top-left"></span>
-                  <span class="hamburger-line transition duration-300 ease-in-out"></span>
-                  <span class="hamburger-line transition duration-300 ease-in-out origin-bottom-left"></span>
+            <div class="min-[900px]:hidden z-[999] flex px-4 items-center w-full ">
+                <img src="{{ asset('assets/img/logo.png') }}" alt="" class="w-20 h-auto scale-100 mr-auto">
+                <button id="hamburger_home" name="hamburger" type="button" class="hamburger right-0 w-[2.5rem] h-11 items-center justify-center rounded">
+                  <span class="hamburger-line bg-white transition duration-300 ease-in-out origin-top-left"></span>
+                  <span class="hamburger-line bg-white transition duration-300 ease-in-out"></span>
+                  <span class="hamburger-line bg-white transition duration-300 ease-in-out origin-bottom-left"></span>
                 </button>
               </div>
 
         </nav>
 
 
-        <div class="sidebar bg-white z-[500] transition-all duration-500 h-[100vh] w-full fixed top-0">
+        <div class="sidebar bg-white z-[9999] transition-all duration-500 h-[100vh] w-full fixed top-0">
             <div class="w-full flex items-center justify-center py-5 border-b border-[#021526]">
-                <div class="w-full flex justify-center">
-                    <img src="{{ asset('assets/img/logo.png') }}" alt="" class="w-24">
+                <div class="w-full grid grid-cols-3">
+                    <img src="{{ asset('assets/img/logo.png') }}" alt="" class="w-24 col-start-2 mx-auto">
+                    <button id="hamburger_close" name="hamburger" type="button" class="justify-self-end self-center hamburger-close mr-4 w-[2.5rem] h-11 items-center justify-center rounded">
+                        <span class="hamburger-line bg-black transition duration-300 ease-in-out origin-top-left"></span>
+                        <span class="hamburger-line bg-black transition duration-300 ease-in-out"></span>
+                        <span class="hamburger-line bg-black transition duration-300 ease-in-out origin-bottom-left"></span>
+                    </button>
                 </div>
             </div>
             <div class="flex flex-col">
                 <a href="{{ route('main') }}" class="font-medium z-10 text-2xl text-[#021526] border-b border-[#021526] border-opacity-40 p-5">Home</a>
                 <a href="{{ route('about') }}" class="font-medium z-10 text-2xl text-[#021526] border-b border-[#021526] border-opacity-40 p-5">About</a>
                 <a href="{{ route('technotion') }}" class="font-medium z-10 text-2xl text-[#021526] border-b border-[#021526] border-opacity-40 p-5">Technotion</a>
-                <a href="{{ route('department') }}" class="flex items-center font-medium z-10 text-2xl text-[#021526] border-b border-[#021526] border-opacity-40 p-5"><span class="">Department</span><i data-feather="chevron-down" class="ml-auto"></i></a>
                 <a href="{{ route('classroom') }}" class="font-medium z-10 text-2xl text-[#021526] border-b border-[#021526] border-opacity-40 p-5">Classroom</a>
+                <a href="{{ route('department') }}" class="flex items-center font-medium z-10 text-2xl text-[#021526] border-b border-[#021526] border-opacity-40 p-5"><span class="">Department</span><i data-feather="chevron-down" class="ml-auto"></i></a>
             </div>
         </div>
         @yield('content_home')
 
 
-        <footer class="bg-[#111928] px-36 max-[1300px]:px-20 max-[1100px]:px-10 bottom-0 relative pt-14 pb-7">
-            <div class="flex w-full mb-10">
-                <div class="w-[25%] max-[700px]:w-[40%]">
-                    <img src="{{ asset('assets/img/logo.png') }}" alt="" class="w-28">
+        <footer class="bg-[#111928] px-36 max-[1300px]:px-20 max-[728px]:px-5 max-[1100px]:px-10 bottom-0 relative pt-14 pb-7">
+            <div class="flex max-[700px]:flex-wrap w-full mb-10">
+                <div class="w-[25%] max-[700px]:w-[100%]">
+                    <img src="{{ asset('assets/img/logo.png') }}" alt="" class="w-28 justify-self-center">
                 </div>
-                <div class="w-[75%] max-[700px]:w-[60%] grid grid-cols-3 max-[700px]:grid-cols-1 max-[800px]:grid-cols-2 max-[800px]:gap-5">
-                    <div class="flex flex-col gap-3">
+                <div class="w-[75%] max-[700px]:w-[100%] grid grid-cols-3 max-[700px]:grid-cols-1 max-[800px]:grid-cols-2 max-[800px]:gap-5">
+                    <div class="flex flex-col gap-3 max-[700px]:col-start-1">
                         <h1 class="font-bold text-white text-lg max-[1055px]:text-base">Features</h1>
                         <a class="text-base max-[1055px]:text-sm font-bold text-white opacity-75" href="#">Home</a>
                         <a class="text-base max-[1055px]:text-sm font-bold text-white opacity-75" href="#">About</a>
                         <a class="text-base max-[1055px]:text-sm font-bold text-white opacity-75" href="#">Technotion</a>
                         <a class="text-base max-[1055px]:text-sm font-bold text-white opacity-75" href="#">Department</a>
                     </div>
-                    <div class="flex flex-col gap-3">
+                    <div class="flex flex-col gap-3 max-[700px]:col-start-1 max-[700px]:col-span-3 max-[700px]:row-start-2">
                         <h1 class="font-bold text-white text-lg max-[1055px]:text-base">Contact Us</h1>
                         <div class="flex max-[700px]:flex-wrap max-[400px]:text-sm">
                             <a class="w-full text-base max-[1055px]:text-sm font-bold text-white opacity-75" href="#">Email:</a><span class="text-right w-full text-white font-bold text-base max-[1055px]:text-sm">mail.hmpsti.ub@gmail.com</span>
@@ -76,7 +82,7 @@
                             <a class="w-full text-base max-[1055px]:text-sm font-bold text-white opacity-75" href="#">Whatsapp:</a><span class="text-right w-full text-white font-bold text-base max-[1055px]:text-sm">0823-3743-5710</span>
                         </div>
                     </div>
-                    <div class="flex flex-col gap-3">
+                    <div class="flex flex-col gap-3 max-[700px]:col-start-2 max-[700px]:row-start-1">
                         <div class="min-[800px]:ml-auto">
                             <h1 class="font-bold text-white text-lg max-[1055px]:text-base">Social</h1>
                             <div class="social-media flex gap-3 ml-auto">
