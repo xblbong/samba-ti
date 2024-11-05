@@ -26,8 +26,32 @@
     </div>
 </div>
 
+{{-- HMPSTI --}}
+<img src="{{ asset('assets/img/garis1.png') }}" alt="" class="w-full mt-52">
+<div class="flex items-center px-36 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5">
+    <div class="flex items-center w-full">
+        <img src="{{ asset('assets/img/hmpsti.png') }}" alt="">
+    </div>
+    <div class="">
+        <h1 class="text-white font-raleway font-extrabold text-4xl">HMPSTI (Himpunan Mahasiswa Program <br> Studi Teknologi Informasi)</h1>
+        <p class="text-white font-raleway font-normal text-lg mt-6">adalah organisasi mahasiswa yang berada di bawah Program Studi Teknologi Informasi, Fakultas Vokasi, Universitas Brawijaya. HMPSTI berperan sebagai wadah bagi mahasiswa untuk mengembangkan keterampilan, pengetahuan, dan pengalaman dalam bidang teknologi informasi melalui berbagai kegiatan seperti seminar, workshop, dan kompetisi. Selain itu, organisasi ini juga berfungsi untuk mempererat hubungan antara mahasiswa, dan dosen.</p>
+    </div>
+</div>
+<img src="{{ asset('assets/img/garis2.png') }}" alt="" class="w-full">
+
+{{-- Visi Misi --}}
+<h1 class="text-white font-raleway text-center font-extrabold text-5xl px-36 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5 mt-52 mb-28">VISI</h1>
+<div class="vismis px-36 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5">
+    <div class="rounded-2xl overflow-hidden border border-solid relative border-white mx-auto px-7 pt-9 pb-11 w-max">
+        <h1 class="font-raleway font-normal text-white text-lg leading-5">Terwujudnya HMPSTI Sebagai wadah mahasiswa Prodi Teknologi
+            <br>Informasi yang Dinamis, Kolaboratif dan Inovatif dalam
+            <br>mewujudkan kontribusi secara Internal maupun Eksternal</h1>
+        <div class="bg-gradient-to-r from-[#F8CF35] to-[#02D1CB] w-full h-3 absolute bottom-0 left-0"></div>
+    </div>
+</div>
+
 {{-- Filosofi Logo --}}
-<h1 class="text-white fonr-raleway font-extrabold text-5xl px-36 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5 mt-36 mb-28">Filosofi Logo</h1>
+<h1 class="text-white font-raleway font-extrabold text-5xl px-36 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5 mt-52 mb-28">Filosofi Logo</h1>
 <div class="flex items-center gap-40 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5 mx-auto px-36">
     <div class="flex items-center">
         <img src="{{ asset('assets/img/logo-techno.png') }}" alt="">
