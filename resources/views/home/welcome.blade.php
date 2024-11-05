@@ -2,17 +2,16 @@
 @section('content_home')
 
 <div class="relative -mt-24 overflow-hidden">
-    {{-- <img src="{{ asset('assets/img/bg-1.png') }}" class="image-hero max-[900px]:bg-cover w-full max-[900px]:bg-center -z-10" alt=""> --}}
     <img class="top-0 left-0 absolute mix-blend-luminosity w-full bg-cover opacity-25" src="{{ asset('assets/img/bgmain.png') }}" alt="">
     <img class="absolute -z-10 top-0 left-0 w-full bg-cover" src="{{ asset('assets/img/grid.png') }}" alt="">
 
-    <div class="relative max-[728px]:pt-[100px] pt-[250px]">
+    <div class="relative max-[728px]:pt-[100px] pt-[200px]">
         <div class="flex max-[728px]:flex-wrap w-full px-36 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5 items-center">
             <div class="w-[60%] max-[728px]:w-full text-white">
                 <h1 class="font-bold font-raleway text-lg max-[370px]:text-sm">Welcome to,</h1>
                 <h1 class="font-black font-raleway max-[438px]:texl-xl max-[370px]:font-[1rem] max-[550px]:leading-7 max-[900px]:text-3xl max-[1174px]:text-5xl text-6xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-1 mb-2">Information Technology Student Association</h1>
                 <h1 class="font-bold font-raleway text-lg mb-5 max-[728px]:mb-3 max-[370px]:text-sm">━ Kabinet Gema Nirvana</h1>
-                <a href="" class="max-[550px]:px-7 max-[550px]:py-2 px-10 py-3 shadow bg-[#F8CF35] max-[370px]:text-base rounded-full font-raleway font-semibold text-lg">About Us</a>
+                <a href="{{ route('about') }}" class="max-[550px]:px-7 max-[550px]:py-2 px-10 py-3 shadow bg-[#F8CF35] max-[370px]:text-base rounded-full font-raleway font-semibold text-lg">About Us</a>
             </div>
             <div class="ml-auto w-[40%] max-[728px]:w-full relative flex justify-end">
                 <img class="w-full" src="{{ asset('assets/img/tivo.png') }}" alt="">
