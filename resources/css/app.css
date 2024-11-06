@@ -134,9 +134,28 @@
     max-width: 1000px;
     position: relative;
 }
+.gallery-container, .gallery-container1, .gallery-container2, .gallery-container3, .gallery-container4, .gallery-container5, .gallery-container6, .gallery-container7 {
+    display: flex;
+    height: 400px;
+    margin: 0 auto;
+    max-width: 1000px;
+    position: relative;
+}
 
 /* Gaya gambar galeri */
 .gallery-item {
+    opacity: 0;
+    position: absolute;
+    transition: all 0.3s ease-in-out;
+    width: 330px;
+    z-index: 0;
+    border-radius: 15px;
+    background-size: cover; /* Agar gambar tidak terdistorsi */
+    background-position: center;
+    box-shadow: 14px -14px 30px #2261DF;
+    box-shadow: -14px 14px 30px #2261DF;
+}
+.gallery-item, .gallery-item1, .gallery-item2, .gallery-item3, .gallery-item4, .gallery-item5, .gallery-item6, .gallery-item7 {
     opacity: 0;
     position: absolute;
     transition: all 0.3s ease-in-out;
@@ -186,41 +205,37 @@
     transform: translateX(-50%);
 }
 
-/* Kontrol navigasi */
-.gallery-controls {
+/* Kontrol Navigasi Umum */
+.gallery-controls, .gallery-controls1, .gallery-controls2, .gallery-controls3, .gallery-controls4, .gallery-controls5 {
     display: flex;
     position: absolute;
     top: 30%;
     width: 100%;
     transform: translateY(-50%);
-    justify-content: space-between; /* Menyebar kontrol ke kiri dan kanan */
-    padding: 0 10px; /* Menambahkan padding kiri dan kanan untuk kontrol */
-    pointer-events: auto; /* Pastikan kontrol bisa di-klik */
+    justify-content: space-between;
+    padding: 0 10px;
+    pointer-events: auto;
 }
 
-/* Posisi dan gaya tombol kontrol */
-.gallery-controls-previous{
-    margin-left: -100px;
-}
-.gallery-controls-next {
-    margin-right: -100px;
-}
-.gallery-controls-previous,
-.gallery-controls-next {
+/* Posisi dan Gaya Tombol Kontrol untuk Setiap Carousel */
+.gallery-controls-previous, .gallery-controls-previous1, .gallery-controls-previous2, .gallery-controls-previous3, .gallery-controls-previous4, .gallery-controls-previous5,
+.gallery-controls-next, .gallery-controls-next1, .gallery-controls-next2, .gallery-controls-next3, .gallery-controls-next4, .gallery-controls-next5 {
     cursor: pointer;
-    height: 50px; /* Menentukan tinggi tombol */
-    width: 30px; /* Menentukan lebar tombol */
+    height: 50px;
+    width: 30px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0; /* Menghilangkan teks */
+    font-size: 0;
     position: relative;
-    z-index: 5; /* Pastikan tombol berada di atas gambar */
+    z-index: 5;
+    background: transparent; /* Buat latar belakang transparan */
+    border: none; /* Hilangkan border default button */
 }
 
-/* Gaya panah pada tombol kontrol */
-.gallery-controls-previous::before,
-.gallery-controls-next::before {
+/* Gaya Panah pada Tombol Kontrol */
+.gallery-controls-previous::before, .gallery-controls-previous1::before, .gallery-controls-previous2::before, .gallery-controls-previous3::before, .gallery-controls-previous4::before, .gallery-controls-previous5::before,
+.gallery-controls-next::before, .gallery-controls-next1::before, .gallery-controls-next2::before, .gallery-controls-next3::before, .gallery-controls-next4::before, .gallery-controls-next5::before {
     border: solid #fff;
     border-width: 0 5px 5px 0;
     content: '';
@@ -230,16 +245,16 @@
     position: absolute;
 }
 
-.gallery-controls-previous::before {
-    border-right-width: 3px; /* Menyesuaikan lebar panah */
-    border-bottom-width: 3px; /* Menyesuaikan lebar panah */
-    transform: rotate(135deg); /* Menempatkan panah kiri */
+/* Gaya untuk Panah Kiri */
+.gallery-controls-previous::before, .gallery-controls-previous1::before, .gallery-controls-previous2::before, .gallery-controls-previous3::before, .gallery-controls-previous4::before, .gallery-controls-previous5::before {
+    transform: rotate(135deg);
+    left: -15px; /* Atur posisi panah */
 }
 
-.gallery-controls-next::before {
-    border-right-width: 3px; /* Menyesuaikan lebar panah */
-    border-bottom-width: 3px; /* Menyesuaikan lebar panah */
-    transform: rotate(-45deg); /* Menempatkan panah kanan */
+/* Gaya untuk Panah Kanan */
+.gallery-controls-next::before, .gallery-controls-next1::before, .gallery-controls-next2::before, .gallery-controls-next3::before, .gallery-controls-next4::before, .gallery-controls-next5::before {
+    transform: rotate(-45deg);
+    right: -15px; /* Atur posisi panah */
 }
 
 

@@ -21,14 +21,14 @@
         <div class="relative w-full">
 
             <div class="gallery max-[800px]:w-[50%] max-[550px]:mt-20 mt-64 z-20 relative">
-                <div class="gallery-container">
-                    <img class="gallery-item gallery-item-1 rounded border-2 border-white" src="{{ asset('assets/img/hero1.png') }}" data-index="1">
-                    <img class="gallery-item gallery-item-2 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="2">
-                    <img class="gallery-item gallery-item-3 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="3">
-                    <img class="gallery-item gallery-item-4 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="4">
-                    <img class="gallery-item gallery-item-5 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="5">
+                <div class="gallery-container1">
+                    <img class="gallery-item1 gallery-item-1 rounded border-2 border-white" src="{{ asset('assets/img/hero1.png') }}" data-index="1">
+                    <img class="gallery-item1 gallery-item-2 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="2">
+                    <img class="gallery-item1 gallery-item-3 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="3">
+                    <img class="gallery-item1 gallery-item-4 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="4">
+                    <img class="gallery-item1 gallery-item-5 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="5">
                 </div>
-                <div class="gallery-controls mx-auto z-[200]"></div>
+                <div class="gallery-controls gallery-controls1 mx-auto z-[200]"></div>
             </div>
         </div>
     </div>
