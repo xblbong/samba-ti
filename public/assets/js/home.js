@@ -20,13 +20,22 @@ document.addEventListener('click', function(e){
 
 });
 
+document.querySelector('#hamburger_close').
+onclick = () => {
+    navbarNav.classList.remove('actives');
+    menu_btn.classList.remove('is-active');
+};
+
 //navbar scroll transparent
 const navEl = document.querySelector('.scroll');
 const navMid = document.querySelector('.scroll');
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 19) {
+    if (window.scrollY > 400) {
+        navMid.classList.add('navbar-after-scrolled');
+    }else if(window.scrollY > 200) {
         navMid.classList.add('navbar-scrolled');
-    }else{
+        navMid.classList.remove('navbar-after-scrolled');
+    }else {
         navMid.classList.remove('navbar-scrolled');
     }
 });
