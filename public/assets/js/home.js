@@ -30,7 +30,7 @@ onclick = () => {
 const navEl = document.querySelector('.scroll');
 const navMid = document.querySelector('.scroll');
 window.addEventListener('scroll', () => {
-    if (window.scrollY > 400) {
+    if (window.scrollY > 300) {
         navMid.classList.add('navbar-after-scrolled');
     }else if(window.scrollY > 200) {
         navMid.classList.add('navbar-scrolled');
@@ -71,38 +71,6 @@ const observerScale = new IntersectionObserver((entries) => {
 
 const hiddenElementsScale = document.querySelectorAll('.fade-in');
 hiddenElementsScale.forEach((el) => observerScale.observe(el));
-
-
-// start pop left
-const observerLeft = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        console.log(entry)
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show-left');
-        } else {
-            entry.target.classList.remove('show-left');
-        }
-    });
-});
-
-const hiddenElementsLeft = document.querySelectorAll('.hidden-left');
-hiddenElementsLeft.forEach((el) => observerLeft.observe(el));
-// finish pop right
-
-const observerRight = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-        console.log(entry)
-        if (entry.isIntersecting) {
-            entry.target.classList.add('show-right');
-        } else {
-            entry.target.classList.remove('show-right');
-        }
-    });
-});
-
-const hiddenElementsRight = document.querySelectorAll('.hidden-right');
-hiddenElementsRight.forEach((el) => observerRight.observe(el));
-
 
 const galleryContainer = document.querySelector('.gallery-container');
 const galleryControlsContainer = document.querySelector('.gallery-controls');
