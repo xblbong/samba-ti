@@ -70,6 +70,7 @@
             7 PROJECT <br> TECHNOTION
         </h1>
     </div>
+
 </div>
 
     <!-- <span class="meteor -z-10"></span>
