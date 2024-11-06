@@ -61,17 +61,205 @@
 
     <!-- PROJECT TIMELINE -->
     <div class="px-20 hidden-up">
-    <h1 class="text-[#fff] text-left font-bold font-raleway text-6xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-1 mb-10 hidden-up">
-        PROJECT TIMELINE
-    </h1>
-    <div class="relative flex flex-col justify-center items-center">
-        <img src="{{ asset('assets/svg/project-timeline.svg') }}" alt="project-timeline" class="">
-        <h1 class="absolute top-[92%] text-center text-[#FFFFFF] font-bold font-raleway text-4xl transform -translate-y-1/2">
-            7 PROJECT <br> TECHNOTION
+        <h1 class="text-[#fff] text-left font-bold font-raleway text-6xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-1 mb-10 hidden-up">
+            PROJECT TIMELINE
         </h1>
-    </div>
+        <div class="relative flex flex-col justify-center items-center">
+            <img src="{{ asset('assets/svg/project-timeline.svg') }}" alt="project-timeline" class="">
+            <h1 class="absolute top-[92%] text-center text-[#FFFFFF] font-bold font-raleway text-4xl transform -translate-y-1/2">
+                7 PROJECT <br> TECHNOTION
+            </h1>
+        </div>
 
-</div>
+        <!-- TECHNO COMPETITION -->
+        <div class="flex flex-col items-center">
+            <div class="flex mb-16">
+                <img src="{{ asset('assets/svg/rizky-dmb.svg') }}" alt="" class="hidden-up">
+                <div class="items-center flex flex-col justify-center">
+                    <h1 class="text-[#fff] text-center font-bold font-raleway text-3xl max-[728px]:-mt-1 max-[728px]:mb-0 hidden-up">
+                        TECHNO COMPETITION
+                    </h1>
+                    <h1 class="text-[#fff] w-[80%] text-left font-normal font-raleway text-2xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-7 hidden-up">
+                        Perlombaan antar Mahasiswa dan SMA / SMK seputar Teknologi Informasi Tingkat Regional
+                    </h1>
+                </div>
+            </div>
+            <div class="relative w-full">
+                <div class="gallery max-[800px]:w-[50%] max-[550px]:mt-20 z-20 relative">
+                    <div class="gallery-container">
+                        <img class="gallery-item gallery-item-1 rounded border-2 border-white" src="{{ asset('assets/img/hero1.png') }}" data-index="1">
+                        <img class="gallery-item gallery-item-2 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="2">
+                        <img class="gallery-item gallery-item-3 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="3">
+                        <img class="gallery-item gallery-item-4 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="4">
+                        <img class="gallery-item gallery-item-5 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="5">
+                    </div>
+                    <div class="gallery-controls mx-auto z-[200]"></div>
+                </div>
+            </div>
+        </div>
+        <!-- TECHFAIR -->
+        <div class="flex flex-col items-center">
+            <div class="flex mb-16 flex-row-reverse">
+                <img src="{{ asset('assets/svg/bintang-ristek.svg') }}" alt="" class="hidden-up">
+                <div class="items-center flex flex-col justify-center">
+                    <h1 class="text-[#fff] text-center font-bold font-raleway text-3xl max-[728px]:-mt-1 max-[728px]:mb-0 hidden-up">
+                        TECHFAIR
+                    </h1>
+                    <h1 class="text-[#fff] w-[80%] text-left font-normal font-raleway text-2xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-7 hidden-up">
+                        Pameran Karya Teknologi Informasi yang diwadahi HMPSTI
+                    </h1>
+                </div>
+            </div>
+
+            <div class="relative w-full">
+                <div class="gallery max-[800px]:w-[50%] max-[550px]:mt-20 z-20 relative">
+                    <div class="gallery-container">
+                        <img class="gallery-item gallery-item-1 rounded border-2 border-white" src="{{ asset('assets/img/hero1.png') }}" data-index="1">
+                        <img class="gallery-item gallery-item-2 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="2">
+                        <img class="gallery-item gallery-item-3 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="3">
+                        <img class="gallery-item gallery-item-4 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="4">
+                        <img class="gallery-item gallery-item-5 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="5">
+                    </div>
+                    <div class="gallery-controls mx-auto z-[200]"></div>
+                </div>
+            </div>
+        </div>
+        <!-- TECH PLANNER -->
+        <div class="flex flex-col items-center">
+            <div class="flex mb-16">
+                <img src="{{ asset('assets/svg/hukama-psdm.svg') }}" alt="" class="hidden-up">
+                <div class="items-center flex flex-col justify-center">
+                    <h1 class="text-[#fff] text-center font-bold font-raleway text-3xl max-[728px]:-mt-1 max-[728px]:mb-0 hidden-up">
+                    TECH PLANNER
+                    </h1>
+                    <h1 class="text-[#fff] w-[85%] text-left font-normal font-raleway text-2xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-7 hidden-up">
+                        Seminar dan Bootcamp melalui kerjasama instansi/akademi bootcamp
+                    </h1>
+                </div>
+            </div>
+
+            <div class="relative w-full">
+                <div class="gallery max-[800px]:w-[50%] max-[550px]:mt-20 z-20 relative">
+                    <div class="gallery-container">
+                        <img class="gallery-item gallery-item-1 rounded border-2 border-white" src="{{ asset('assets/img/hero1.png') }}" data-index="1">
+                        <img class="gallery-item gallery-item-2 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="2">
+                        <img class="gallery-item gallery-item-3 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="3">
+                        <img class="gallery-item gallery-item-4 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="4">
+                        <img class="gallery-item gallery-item-5 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="5">
+                    </div>
+                    <div class="gallery-controls mx-auto z-[200]"></div>
+                </div>
+            </div>
+        </div>
+        <!-- IT VENTURE -->
+        <div class="flex flex-col items-center">
+            <div class="flex mb-16 flex-row-reverse">
+                <img src="{{ asset('assets/svg/bintang-ristek.svg') }}" alt="" class="hidden-up">
+                <div class="items-center flex flex-col justify-center">
+                    <h1 class="text-[#fff] text-center font-bold font-raleway text-3xl max-[728px]:-mt-1 max-[728px]:mb-0 hidden-up">
+                        IT VENTURE
+                    </h1>
+                    <h1 class="text-[#fff] w-[80%] text-left font-normal font-raleway text-2xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-7 hidden-up">
+                        Sambut Mahasiswa Baru dan Pengenalan tentang Prodi TI
+                    </h1>
+                </div>
+            </div>
+
+            <div class="relative w-full">
+                <div class="gallery max-[800px]:w-[50%] max-[550px]:mt-20 z-20 relative">
+                    <div class="gallery-container">
+                        <img class="gallery-item gallery-item-1 rounded border-2 border-white" src="{{ asset('assets/img/hero1.png') }}" data-index="1">
+                        <img class="gallery-item gallery-item-2 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="2">
+                        <img class="gallery-item gallery-item-3 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="3">
+                        <img class="gallery-item gallery-item-4 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="4">
+                        <img class="gallery-item gallery-item-5 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="5">
+                    </div>
+                    <div class="gallery-controls mx-auto z-[200]"></div>
+                </div>
+            </div>
+        </div>
+        <!-- TECHNO CAREER -->
+        <div class="flex flex-col items-center">
+            <div class="flex mb-16">
+                <img src="{{ asset('assets/svg/hukama-psdm.svg') }}" alt="" class="hidden-up">
+                <div class="items-center flex flex-col justify-center">
+                    <h1 class="text-[#fff] text-center font-bold font-raleway text-3xl max-[728px]:-mt-1 max-[728px]:mb-0 hidden-up">
+                    TECHNO CAREER
+                    </h1>
+                    <h1 class="text-[#fff] w-[85%] text-left font-normal font-raleway text-2xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-7 hidden-up">
+                    Seminar Tingkat Regional tentang Inovasi Kreatif dan Digital
+                    </h1>
+                </div>
+            </div>
+
+            <div class="relative w-full">
+                <div class="gallery max-[800px]:w-[50%] max-[550px]:mt-20 z-20 relative">
+                    <div class="gallery-container">
+                        <img class="gallery-item gallery-item-1 rounded border-2 border-white" src="{{ asset('assets/img/hero1.png') }}" data-index="1">
+                        <img class="gallery-item gallery-item-2 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="2">
+                        <img class="gallery-item gallery-item-3 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="3">
+                        <img class="gallery-item gallery-item-4 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="4">
+                        <img class="gallery-item gallery-item-5 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="5">
+                    </div>
+                    <div class="gallery-controls mx-auto z-[200]"></div>
+                </div>
+            </div>
+        </div>
+        <!-- IT VENTURE -->
+        <div class="flex flex-col items-center">
+            <div class="flex mb-16">
+                <img src="{{ asset('assets/svg/bintang-ristek.svg') }}" alt="" class="hidden-up">
+                <div class="items-center flex flex-col justify-center">
+                    <h1 class="text-[#fff] text-center font-bold font-raleway text-3xl max-[728px]:-mt-1 max-[728px]:mb-0 hidden-up">
+                    IT CHARITY
+                    </h1>
+                    <h1 class="text-[#fff] w-[80%] text-left font-normal font-raleway text-2xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-7 hidden-up">
+                    Mengajar dan Memberikan Edukasi ke suatu instansi (sekolah) tentang digitalisasi
+                    </h1>
+                </div>
+            </div>
+
+            <div class="relative w-full">
+                <div class="gallery max-[800px]:w-[50%] max-[550px]:mt-20 z-20 relative">
+                    <div class="gallery-container">
+                        <img class="gallery-item gallery-item-1 rounded border-2 border-white" src="{{ asset('assets/img/hero1.png') }}" data-index="1">
+                        <img class="gallery-item gallery-item-2 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="2">
+                        <img class="gallery-item gallery-item-3 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="3">
+                        <img class="gallery-item gallery-item-4 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="4">
+                        <img class="gallery-item gallery-item-5 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="5">
+                    </div>
+                    <div class="gallery-controls mx-auto z-[200]"></div>
+                </div>
+            </div>
+        </div>
+        <!-- VISIT TECHNOLOGY -->
+        <div class="flex flex-col items-center">
+            <div class="flex mb-16">
+                <img src="{{ asset('assets/svg/hukama-psdm.svg') }}" alt="" class="hidden-up">
+                <div class="items-center flex flex-col justify-center">
+                    <h1 class="text-[#fff] text-center font-bold font-raleway text-3xl max-[728px]:-mt-1 max-[728px]:mb-0 hidden-up">
+                    VISIT TECHNOLOGY
+                    </h1>
+                    <h1 class="text-[#fff] w-[85%] text-left font-normal font-raleway text-2xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-7 hidden-up">
+                    Kunjungan oleh HMPSTI ke suatu perusahaan bidang teknologi atau lainnya
+                    </h1>
+                </div>
+            </div>
+
+            <div class="relative w-full">
+                <div class="gallery max-[800px]:w-[50%] max-[550px]:mt-20 z-20 relative">
+                    <div class="gallery-container">
+                        <img class="gallery-item gallery-item-1 rounded border-2 border-white" src="{{ asset('assets/img/hero1.png') }}" data-index="1">
+                        <img class="gallery-item gallery-item-2 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="2">
+                        <img class="gallery-item gallery-item-3 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="3">
+                        <img class="gallery-item gallery-item-4 rounded border-2 border-white" src="{{ asset('assets/img/hero2.png') }}" data-index="4">
+                        <img class="gallery-item gallery-item-5 rounded border-2 border-white" src="{{ asset('assets/img/hero3.png') }}" data-index="5">
+                    </div>
+                    <div class="gallery-controls mx-auto z-[200]"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- <span class="meteor -z-10"></span>
     <span class="meteor -z-10"></span>
