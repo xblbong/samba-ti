@@ -24,7 +24,7 @@
                 <div class="bg-gradient-to-r from-[#F8CF35] to-[#00DED3] w-full h-3 absolute bottom-0 left-0"></div>
             </div>
             <!-- Background Jaring -->
-            <img class="top-0 absolute mix-blend-luminosity w-full bg-cover opacity-25 -z-10" src="{{ asset('assets/img/bgmain.png') }}" alt="">    
+            <img class="top-0 absolute mix-blend-luminosity w-full bg-cover opacity-25 -z-10" src="{{ asset('assets/img/bgmain.png') }}" alt="">
         </div>
 
         <!-- Logo Positioning -->
@@ -39,7 +39,38 @@
 
         </div>
     </div>
-    
+
+    <!-- STRUCTURE COMMITE -->
+    <div class="px-20 items-center mb-28">
+        <div class="flex flex-wrap items-center justify-center">
+            <img src="{{ asset('assets/svg/Kahimm.svg') }}" alt="kahimm" class="hidden-up">
+        </div>
+        <div class="flex flex-wrap items-center justify-between -mt-52 px-5">
+            <img src="{{ asset('assets/svg/wakahim1.svg') }}" alt="kahimm" class="hidden-up">
+            <img src="{{ asset('assets/svg/wakahim2.svg') }}" alt="kahimm" class="hidden-up">
+        </div>
+        <div class="flex flex-wrap justify-center text-center gap-10 items-center">
+            <img src="{{ asset('assets/svg/Sekretaris2.svg') }}" alt="kahimm" class="hidden-up">
+            <img src="{{ asset('assets/svg/bendahara2.svg') }}" alt="kahimm" class="hidden-up">
+            <img src="{{ asset('assets/svg/Sekretaris3.svg') }}" alt="kahimm" class="hidden-up">
+            <img src="{{ asset('assets/svg/bendahara3.svg') }}" alt="kahimm" class="hidden-up">
+            <img src="{{ asset('assets/svg/Sekretaris4.svg') }}" alt="kahimm" class="hidden-up">
+            <img src="{{ asset('assets/svg/Sekretaris5.svg') }}" alt="kahimm" class="hidden-up">
+        </div>
+    </div>
+
+    <!-- PROJECT TIMELINE -->
+    <div class="px-20 hidden-up">
+    <h1 class="text-[#fff] text-left font-bold font-raleway text-6xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-1 mb-10 hidden-up">
+        PROJECT TIMELINE
+    </h1>
+    <div class="relative flex flex-col justify-center items-center">
+        <img src="{{ asset('assets/svg/project-timeline.svg') }}" alt="project-timeline" class="">
+        <h1 class="absolute top-[92%] text-center text-[#FFFFFF] font-bold font-raleway text-4xl transform -translate-y-1/2">
+            7 PROJECT <br> TECHNOTION
+        </h1>
+    </div>
+</div>
 
     <!-- <span class="meteor -z-10"></span>
     <span class="meteor -z-10"></span>
