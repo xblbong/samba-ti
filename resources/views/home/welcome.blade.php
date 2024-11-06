@@ -8,13 +8,13 @@
     <div class="relative max-[728px]:pt-[100px] pt-[200px]">
         <div class="flex max-[728px]:flex-wrap w-full px-36 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5 items-center">
             <div class="w-[60%] max-[728px]:w-full text-white">
-                <h1 class="font-bold font-raleway text-lg max-[370px]:text-sm">Welcome to,</h1>
-                <h1 class="font-black font-raleway max-[438px]:texl-xl max-[370px]:font-[1rem] max-[550px]:leading-7 max-[900px]:text-3xl max-[1174px]:text-5xl text-6xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-1 mb-2">Information Technology Student Association</h1>
-                <h1 class="font-bold font-raleway text-lg mb-5 max-[728px]:mb-3 max-[370px]:text-sm">━ Kabinet Gema Nirvana</h1>
+                <h1 class="font-bold font-raleway text-lg max-[370px]:text-sm hidden-up">Welcome to,</h1>
+                <h1 class="font-black font-raleway max-[438px]:texl-xl max-[370px]:font-[1rem] hidden-up max-[550px]:leading-7 max-[900px]:text-3xl max-[1174px]:text-5xl text-6xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-1 mb-2">Information Technology Student Association</h1>
+                <h1 class="font-bold font-raleway text-lg mb-5 max-[728px]:mb-3 max-[370px]:text-sm hidden-up">━ Kabinet Gema Nirvana</h1>
                 <a href="{{ route('about') }}" class="max-[550px]:px-7 max-[550px]:py-2 px-10 py-3 shadow bg-[#F8CF35] max-[370px]:text-base rounded-full font-raleway font-semibold text-lg">About Us</a>
             </div>
             <div class="ml-auto w-[40%] max-[728px]:w-full relative flex justify-end">
-                <img class="w-full" src="{{ asset('assets/img/tivo.png') }}" alt="">
+                <img class="w-full tivo" src="{{ asset('assets/img/tivo.png') }}" alt="">
             </div>
         </div>
         <img src="{{ asset('assets/img/kuningkanan.png') }}" alt="" class="absolute right-0 bottom-0 -z-10 w-[20%]">
@@ -31,7 +31,10 @@
                 <div class="gallery-controls mx-auto z-[200]"></div>
             </div>
         </div>
+    </div>
 
+    <div class="relative">
+        <img src="{{ asset('assets/img/birukiri.png') }}" alt="" class="absolute left-0 -z-10 w-[20%]">
     </div>
 
     <div class="mt-20 mb-16 max-[550px]:-mt-24">
