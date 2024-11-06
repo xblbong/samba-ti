@@ -4,7 +4,7 @@
 <div class="relative -mt-24 overflow-hidden">
     <img src="{{ asset('assets/img/hero-about.png') }}" class="image-hero -z-10 top-" alt="">
     <!-- TECHNOTION 2024 -->
-    <div class="flex gap-5 mb-60 max-[728px]:flex-wrap w-full max-[728px]:pt-[100px] pt-[180px] px-36 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5 items-center">
+    <div class="flex gap-5 mb-20 max-[728px]:flex-wrap w-full max-[728px]:pt-[100px] pt-[180px] px-36 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5 items-center">
         <div class="w-[90%] max-[950px]:w-[65%] max-[728px]:w-full text-white">
             <h1 class="font-black font-raleway text-6xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-1 mb-2 hidden-up">TECHNOTION <span class="font-poppins text-[#197EFF]">2024</span></h1>
             <h1 class="font-bold font-raleway text-xl mb-5 mt-8 max-[728px]:mb-3 max-[370px]:text-sm max-[1045px]:text-lg flex w-[85%] hidden-up"><span class="mr-2">━</span>“Technology Innovation of Teenagers”</h1>
@@ -60,12 +60,12 @@
     </div>
 
     <!-- PROJECT TIMELINE -->
-    <div class="px-20 hidden-up">
+    <div class="px-20">
         <h1 class="text-[#fff] text-left font-bold font-raleway text-6xl max-[728px]:-mt-1 max-[728px]:mb-0 mt-1 mb-10 hidden-up">
             PROJECT TIMELINE
         </h1>
         <div class="relative flex flex-col justify-center items-center">
-            <img src="{{ asset('assets/svg/project-timeline.svg') }}" alt="project-timeline" class="">
+            <img src="{{ asset('assets/svg/project-timeline.svg') }}" alt="project-timeline" class="hidden-up">
             <h1 class="absolute top-[92%] text-center text-[#FFFFFF] font-bold font-raleway text-4xl transform -translate-y-1/2">
                 7 PROJECT <br> TECHNOTION
             </h1>
@@ -154,7 +154,7 @@
         <!-- IT VENTURE -->
         <div class="flex flex-col items-center">
             <div class="flex mb-16 flex-row-reverse">
-                <img src="{{ asset('assets/svg/bintang-ristek.svg') }}" alt="" class="hidden-up">
+                <img src="{{ asset('assets/svg/nasywa-psdm.svg') }}" alt="" class="hidden-up">
                 <div class="items-center flex flex-col justify-center">
                     <h1 class="text-[#fff] text-center font-bold font-raleway text-3xl max-[728px]:-mt-1 max-[728px]:mb-0 hidden-up">
                         IT VENTURE
@@ -181,7 +181,7 @@
         <!-- TECHNO CAREER -->
         <div class="flex flex-col items-center">
             <div class="flex mb-16">
-                <img src="{{ asset('assets/svg/hukama-psdm.svg') }}" alt="" class="hidden-up">
+                <img src="{{ asset('assets/svg/manda-ekraf.svg') }}" alt="" class="hidden-up">
                 <div class="items-center flex flex-col justify-center">
                     <h1 class="text-[#fff] text-center font-bold font-raleway text-3xl max-[728px]:-mt-1 max-[728px]:mb-0 hidden-up">
                     TECHNO CAREER
@@ -205,10 +205,10 @@
                 </div>
             </div>
         </div>
-        <!-- IT VENTURE -->
+        <!-- IT CHARITY -->
         <div class="flex flex-col items-center">
-            <div class="flex mb-16">
-                <img src="{{ asset('assets/svg/bintang-ristek.svg') }}" alt="" class="hidden-up">
+            <div class="flex mb-16 flex-row-reverse">
+                <img src="{{ asset('assets/svg/daus-advo.svg') }}" alt="" class="hidden-up">
                 <div class="items-center flex flex-col justify-center">
                     <h1 class="text-[#fff] text-center font-bold font-raleway text-3xl max-[728px]:-mt-1 max-[728px]:mb-0 hidden-up">
                     IT CHARITY
@@ -235,7 +235,7 @@
         <!-- VISIT TECHNOLOGY -->
         <div class="flex flex-col items-center">
             <div class="flex mb-16">
-                <img src="{{ asset('assets/svg/hukama-psdm.svg') }}" alt="" class="hidden-up">
+                <img src="{{ asset('assets/svg/bry-perhub.svg') }}" alt="" class="hidden-up">
                 <div class="items-center flex flex-col justify-center">
                     <h1 class="text-[#fff] text-center font-bold font-raleway text-3xl max-[728px]:-mt-1 max-[728px]:mb-0 hidden-up">
                     VISIT TECHNOLOGY
