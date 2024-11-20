@@ -1,7 +1,7 @@
 @extends('home/layout/layout')
 @section('content_home')
 
-<div class="px-36 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5 mt-56">
+<div class="px-36 max-[1300px]:px-20 max-[1100px]:px-10 max-[728px]:px-5 mt-44">
     <div class="flex gap-10 w-full rounded-[20px] bg-white bg-opacity-[3%] border border-white border-opacity-10 py-10 px-16">
         <div class="w-1/2">
             <img src="{{ asset('assets/img/logo.png') }}" alt="" class="mx-auto mb-10">
