@@ -19,7 +19,7 @@
    - MAIL_HOST=smtp.gmail.com
    - MAIL_PORT=465
    - MAIL_USERNAME=hmpstiub@gmail.com
-   - MAIL_PASSWORD=dvhgpmsmkbdweabd
+   - MAIL_PASSWORD=awleqckpdkmziolf
    - MAIL_ENCRYPTION=tls
    - MAIL_FROM_ADDRESS="hmpstiub@gmail.com"
    - MAIL_FROM_NAME="${APP_NAME}"
