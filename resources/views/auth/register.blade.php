@@ -39,7 +39,7 @@
                         <input id="uploadBtn" class="input-field" :value="old('foto')" autocomplete="username" type="file" name="foto" placeholder="Foto">
                         <label class="label-img" for="uploadBtn"><i class="bx bxs-camera-plus"></i> Upload Image</label>
                     </div>
-
+ 
 
                     <div class="input-box">
                         <input class="input-field" placeholder="Full Name" id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
@@ -99,7 +99,7 @@
                        <button class="input-submit" type="submit">
                             <span>Sign Up</span>
                             <i class="bx bx-right-arrow-alt"></i>
-                       </button>
+                       </button>    
                     </div>
                 </form>
 
