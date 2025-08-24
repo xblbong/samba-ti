@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* ====== BASE ===== */
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -10,7 +10,7 @@
 }
 
 /* ====== Body ===== */
-body{
+body {
     background: url("../img/samba/bg-5.svg");
     background-position: center;
     background-size: cover;
@@ -25,7 +25,7 @@ body{
 }
 
 /* ====== Form container ===== */
-.form-container{
+.form-container {
     display: flex;
     width: 1000px;
     height: 600px;
@@ -33,10 +33,12 @@ body{
     border-radius: 30px;
     backdrop-filter: blur(5px);
     overflow: hidden;
+    position: relative;
+    z-index: 2;
 }
 
 /* ====== First Column ===== */
-.col-1{
+.col-1 {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,15 +49,18 @@ body{
     border-radius: 0 30% 20% 0;
     transition: border-radius .3s;
 }
-.image-layer{
+
+.image-layer {
     position: relative;
     top: -30px;
 }
-.form-image-main{
+
+.form-image-main {
     width: 400px;
     -webkit-animation: scale-up 3s ease-in-out alternate infinite;
 }
-.form-image{
+
+.form-image {
     position: absolute;
     left: 0;
     top: 60px;
@@ -66,68 +71,79 @@ body{
 .coin {
     -webkit-animation: scale-down 3s ease-in-out alternate infinite;
 }
+
 .spring {
     -webkit-animation: scale-down 3s ease-in-out alternate infinite;
 }
+
 .dots {
     -webkit-animation: scale-up 3s ease-in-out alternate infinite;
 }
+
 .rocket {
     -webkit-animation: scale-down 3s ease-in-out alternate infinite;
 }
+
 .cloud {
     -webkit-animation: left-right 3s ease-in-out alternate infinite;
 }
+
 .stars {
     -webkit-animation: scale-down 3s ease-in-out alternate infinite;
 }
 
-@keyframes left-right{
-    to{
+@keyframes left-right {
+    to {
         transform: translateX(10px);
     }
 }
-@keyframes up-down{
-    to{
+
+@keyframes up-down {
+    to {
         transform: translateY(10px);
     }
 }
-@keyframes scale-down{
-    to{
+
+@keyframes scale-down {
+    to {
         transform: scale(0.95);
     }
 }
-@keyframes scale-up{
-    to{
+
+@keyframes scale-up {
+    to {
         transform: scale(1.1);
     }
 }
 
 /* ====== Featured Words ===== */
-.featured-words{
+.featured-words {
     text-align: center;
     color: #21264D;
     width: 300px;
 }
-.featured-words span{
+
+.featured-words span {
     font-weight: 600;
     color: #21264D;
 }
 
 /* ====== Second Column ===== */
-.col-2{
+.col-2 {
     position: relative;
     width: 45%;
     padding: 20px;
     overflow: auto;
 }
-.btn-box{
+
+.btn-box {
     display: flex;
     justify-content: center;
     gap: 10px;
     margin-top: 20px;
 }
-.btn{
+
+.btn {
     font-weight: 500;
     padding: 5px 30px;
     border: none;
@@ -138,14 +154,17 @@ body{
     color: #fff;
     text-decoration: none;
 }
-.btn-2{
+
+.btn-2 {
     background: #21264D;
 }
-.btn:hover{
+
+.btn:hover {
     opacity: 0.85;
 }
+
 /*  ======= Login Form ========  */
-.login-form{
+.login-form {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
@@ -156,8 +175,9 @@ body{
     padding: 0 4vw;
     transition: .3s;
 }
+
 /*  ======= Register Form ========  */
-.register-form{
+.register-form {
     position: absolute;
     left: -50%;
     transform: translateX(-50%);
@@ -168,35 +188,44 @@ body{
     padding: 0 4vw;
     transition: .3s;
 }
-.register-form .form-tittle{
+
+.register-form .form-tittle {
     margin-block: 40px 20px;
 }
+
 select {
     -webkit-appearance: none;
     -moz-appearance: none;
     text-indent: 1px;
     text-overflow: '';
 }
-.select{
+
+.select {
     color: black;
     font-weight: 500;
 }
-.form-tittle{
+
+.form-tittle {
     margin: 20px 0;
     color: #21264D;
     font-size: 28px;
     font-weight: 600;
 }
-.form-inputs{
-    width:100%;
+
+.form-inputs {
+    width: 100%;
 }
-.input-box{
+
+.input-box {
     position: relative;
+    margin-bottom: 3px;
 }
+
 .pr-2 {
     padding-right: 15px;
 }
-.input-field{
+
+.input-field {
     width: 100%;
     height: 45px;
     padding: 0 15px;
@@ -209,10 +238,12 @@ select {
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0, 0.2)
 }
-::placeholder{
+
+::placeholder {
     color: #21264db5;
     font-size: 15px;
 }
+
 .input-box .icon {
     position: absolute;
     top: 50%;
@@ -220,20 +251,24 @@ select {
     transform: translateY(-50%);
     color: #21264db5;
 }
-.forgot-pass{
+
+.forgot-pass {
     display: flex;
     justify-content: right;
     gap: 5px;
 }
-.forgot-pass a{
+
+.forgot-pass a {
     color: #153e49;
     text-decoration: none;
     font-size: 14px;
 }
-.forgot-pass a:hover{
+
+.forgot-pass a:hover {
     text-decoration: underline;
 }
-.input-submit{
+
+.input-submit {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -250,27 +285,31 @@ select {
     cursor: pointer;
     transition: .3s;
 }
-.input-submit:hover{
+
+.input-submit:hover {
     gap: 15px;
 }
+
 /* ======== Responsive ======== */
 @media (max-width: 892px) {
-    .form-container{
+    .form-container {
         width: 400px;
     }
-    .col-1{
+
+    .col-1 {
         display: none;
     }
-    .col-2{
+
+    .col-2 {
         width: 100%;
     }
 }
 
-input[type="file"]{
+input[type="file"] {
     display: none;
 }
 
-.label-img{
+.label-img {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -288,10 +327,27 @@ input[type="file"]{
     box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.35);
     border-radius: 10px;
 }
-.label-img i{
+
+.label-img i {
     font-size: 20px;
     margin-right: 5px;
 }
-.label-img:active{
+
+.label-img:active {
     transform: scale(0.9);
+}
+
+/* ====== Animasi Perahu Goyang ===== */
+@keyframes sway-boat {
+    0% {
+        transform: rotate(-6deg) translateX(-8px);
+    }
+
+    100% {
+        transform: rotate(6deg) translateX(8px);
+    }
+}
+
+.boat-animation {
+    animation: sway-boat 4s ease-in-out infinite alternate;
 }

@@ -22,7 +22,7 @@
                 <img src="{{ asset('assets/img/cloud.png') }}" class="form-image cloud" alt="">
                 <!-- <img src="{{ asset('assets/img/stars.png') }}" class="form-image stars" alt=""> -->
             </div>
-            <p class="featured-words">You Are Few Minutes Way To Boost Your Skills With <span>HMPSTI</span></p>
+            <p class="featured-words">You Are Few Minutes Way To Boost Your Skills With <span>SAMBATI</span></p>
         </div>
 
         <div class="col col-2">
