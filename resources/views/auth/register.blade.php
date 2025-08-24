@@ -106,6 +106,9 @@
             </div>
         </div>
      </div>
+     <div style="position: fixed; bottom: 0; left: 50%; z-index: 1;" class="boat-animation">
+            <img src="{{ asset('assets/img/samba/perahu.svg') }}" alt="perahu" style="width: 50rem; height: auto;">
+        </div>
     <!-- JS -->
     <script src="{{ asset('assets/js/login.js') }}"></script>
 </body>

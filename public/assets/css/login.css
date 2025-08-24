@@ -27,8 +27,8 @@ body {
 /* ====== Form container ===== */
 .form-container {
     display: flex;
-    width: 1000px;
-    height: 600px;
+    width: 70rem;
+    height: 44rem;
     border: 3px solid rgba(45, 107, 152, 0.3);
     border-radius: 30px;
     backdrop-filter: blur(5px);
@@ -44,7 +44,7 @@ body {
     justify-content: center;
     flex-direction: column;
     width: 55%;
-    background: rgba(35, 137, 178, 0.262);
+    background: rgba(42, 105, 141, 0.53);
     backgdrop-filter: blur(10px);
     border-radius: 0 30% 20% 0;
     transition: border-radius .3s;
@@ -259,7 +259,7 @@ select {
 }
 
 .forgot-pass a {
-    color: #153e49;
+    color: #162d47;
     text-decoration: none;
     font-size: 14px;
 }
