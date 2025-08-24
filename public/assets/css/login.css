@@ -11,7 +11,7 @@
 
 /* ====== Body ===== */
 body{
-    background: url("../img/1.jpg");
+    background: url("../img/samba/bg-5.svg");
     background-position: center;
     background-size: cover;
     background-attachment: fixed;
@@ -29,9 +29,9 @@ body{
     display: flex;
     width: 1000px;
     height: 600px;
-    border: 3px solid rgba(255, 255, 255, 0.3);
+    border: 3px solid rgba(45, 107, 152, 0.3);
     border-radius: 30px;
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(5px);
     overflow: hidden;
 }
 
@@ -42,13 +42,14 @@ body{
     justify-content: center;
     flex-direction: column;
     width: 55%;
-    background: rgba(255, 255, 255, 0.3);
-    backgdrop-filter: blur(30px);
+    background: rgba(35, 137, 178, 0.262);
+    backgdrop-filter: blur(10px);
     border-radius: 0 30% 20% 0;
     transition: border-radius .3s;
 }
 .image-layer{
     position: relative;
+    top: -30px;
 }
 .form-image-main{
     width: 400px;
@@ -57,7 +58,8 @@ body{
 .form-image{
     position: absolute;
     left: 0;
-    width: 400px;
+    top: 60px;
+    width: 300px;
 }
 
 /* ====== Form Image -webkit-animation ===== */
@@ -104,7 +106,7 @@ body{
 /* ====== Featured Words ===== */
 .featured-words{
     text-align: center;
-    color: #fff;
+    color: #21264D;
     width: 300px;
 }
 .featured-words span{
@@ -130,7 +132,7 @@ body{
     padding: 5px 30px;
     border: none;
     border-radius: 30px;
-    background: rgba(255, 255, 255, 0.2);
+    background: #ffffff33;
     cursor: pointer;
     transition: .2s;
     color: #fff;
@@ -181,7 +183,7 @@ select {
 }
 .form-tittle{
     margin: 20px 0;
-    color: #fff;
+    color: #21264D;
     font-size: 28px;
     font-weight: 600;
 }
@@ -199,16 +201,16 @@ select {
     height: 45px;
     padding: 0 15px;
     margin: 5px 0;
-    color: #fff;
+    color: #21264D;
     background: rgba(255, 255, 255, 0.2);
-    border: none;
-    border-radius: 10px;
+    border: 1px solid #21264db5;
+    border-radius: 7px;
     outline: none;
     backdrop-filter: blur(20px);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0, 0.2)
 }
 ::placeholder{
-    color: #fff;
+    color: #21264db5;
     font-size: 15px;
 }
 .input-box .icon {
@@ -216,7 +218,7 @@ select {
     top: 50%;
     right: 15px;
     transform: translateY(-50%);
-    color: #fff;
+    color: #21264db5;
 }
 .forgot-pass{
     display: flex;
@@ -224,7 +226,7 @@ select {
     gap: 5px;
 }
 .forgot-pass a{
-    color: #fff;
+    color: #153e49;
     text-decoration: none;
     font-size: 14px;
 }
