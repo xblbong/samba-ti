@@ -555,7 +555,7 @@ input::placeholder {
     -ms-touch-action: auto;
 }
 .nav-item.actives {
-    @apply bg-cyan-300 text-white;
+    @apply bg-sky-500 text-white;
 }
 .nav-item {
     @apply transition-all duration-300;
@@ -563,7 +563,7 @@ input::placeholder {
     border-radius: 0.267rem;
 }
 .nav-item:hover{
-    @apply text-cyan-500;
+    @apply bg-sky-600 text-white;
 }
 .content-menu {
     list-style: none;
