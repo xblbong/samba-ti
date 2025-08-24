@@ -19,12 +19,13 @@
     <body class="bg-gray-100">
     <div class="w-full mx-auto">
         <nav class="navbars">
-            <div class="navbar-header w-full h-[4.6rem] relative cursor-pointer z-10">
+            <div class="navbar-header w-full h-[4.6rem] relative cursor-pointer z-10 mb-20">
                 <ul class="m-0 p-0 list-style-none h-full flex flex-row">
                     <li class="w-full my-3">
                         <a href="#">
-                            <div class="h-auto w-full flex items-center justify-center">
-                                <img class="block h-[95px] -mt-[20px]" src="{{ asset('assets/img/logo.png') }}" alt="">
+                            <div class="flex-col h-auto w-full flex items-center justify-center">
+                                <img class="block h-[8rem]" src="{{ asset('assets/img/samba/logo-navitera.svg') }}" alt="logo navitera">
+                                <img class="h-10 -mt-4" src="{{ asset('assets/img/samba/navitera.svg') }}" alt="logo navitera">
                             </div>
                         </a>
                     </li>

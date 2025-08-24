@@ -1,9 +1,15 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Playwrite+GB+S:ital,wght@0,100..400;1,100..400&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: 'Lexend', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
 
 .vertical-align {
     vertical-align: middle;
@@ -534,7 +540,7 @@ input::placeholder {
     align-items: center;
 }
 .navbar-header {
-    padding: 0.8rem 1.45rem 0.3rem 1.3rem;
+    /* padding: 0.8rem 1.45rem 0.3rem 1.3rem; */
 }
 .list-style-none {
     list-style:none;
