@@ -76,6 +76,25 @@
                     </form>
                 </ul>
             </div>
+            @else
+            {{-- Sidebar for non-approved users --}}
+            <div class="navbar-main py-4">
+                <ul class="p-[10px] max-h-[100vh] overflow-auto m-0 navigation-ul">
+                    <li class="relative whitespace-nowrap m-0">
+                        <a href="{{ route('profile.edit') }}" class="nav-item  {{ set_active(['profile.edit']) }} flex items-center overflow-hidden px-4 py-[9px] my-3 text-ellipsis">
+                            <i data-feather="users" class="w-[20px] icon-arrow"></i><span class="ml-[15px] text-base judul">Profile</span>
+                        </a>
+                    </li>
+                </ul>
+                <ul class="mt-16">
+                    <form method="POST" action="{{ route('logout') }}" class="relative whitespace-nowrap m-0 mt-auto">
+                        @csrf
+                        <button type="submit" class="nav-item flex items-center overflow-hidden px-4 py-[9px] my-3 text-ellipsis">
+                            <i data-feather="log-out" class="w-[25px] text-red-400 icon-arrow font-[800]"></i><span class="ml-[15px] text-lg font-bold text-red-400">Logout</span>
+                        </button>
+                    </form>
+                </ul>
+            </div>
             @endif
 
         </nav>

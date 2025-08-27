@@ -12,13 +12,14 @@ class pelajaran extends Model
     use HasApiTokens, HasFactory, Notifiable;
 
     protected $primaryKey = 'id_pelajaran';
+    public $incrementing = true;
+    protected $keyType = 'int';
     /**
      * The attributes that are mass assignable.
      *
      * @var array<int, string>
      */
     protected $fillable = [
-        'id_pelajaran',
         'nama_pelajaran',
         'deskripsi',
         'deadline',

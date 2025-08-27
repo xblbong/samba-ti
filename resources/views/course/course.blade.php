@@ -27,12 +27,12 @@
                             <div class="w-[75%] max-[750px]:w-full">
                                 <div class="flex ">
                                     <h1 class="font-bold text-black text-lg">Riwayat Tugas</h1>
-                                    <a href="{{ route('tugasku') }}" class="ml-auto text-base font-[450] text-slate-500">Lainnya</a href="#">
+                                    <a href="{{ route('tugasku') }}" class="ml-auto text-base font-[450] text-slate-500">Lihat Tugas</a href="#">
                                 </div>
                                 <div class="grid grid-cols-3 max-[550px]:gap-5 max-[550px]:grid-cols-1 max-[1024px]:grid-cols-2 md gap-3 mt-2">
                                     @foreach ($data as $d)
                                         <div class="">
-                                            <div class="px-3 py-2 rounded-t-lg" style="background: {{ $d->background }}">
+                                            <div class="px-3 py-2 rounded-t-lg" style="background-color: {{ $d->background }};">
                                                 <a href="{{ route('detail-task', ['id'=> $d->id_pelajaran]) }}" class="font-bold text-base text-white cursor-pointer">{{ $d->nama_pelajaran }}</a>
                                                 <p class="text-white text-sm font-light">{{ $d->name }}</p>
                                             </div>
@@ -50,7 +50,7 @@
                             <div class="w-[25%] max-[750px]:w-1/2 max-[550px]:w-full">
                                 <div class="flex">
                                     <h1 class="font-bold text-black text-lg">Hubungi SPV</h1>
-                                    <a href="{{ route('student') }}" class="ml-auto text-base font-[450] text-slate-500">Lainnya</a>
+                                    <a href="{{ route('student') }}" class="ml-auto text-base font-[450] text-slate-500">Lihat Cluster</a>
                                 </div>
                                 <div class="mt-2">
                                     @foreach ($spv as $s)

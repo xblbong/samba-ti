@@ -12,12 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('kumpulan', function (Blueprint $table) {
-            $table->integer('id_kumpulan')->increments()->primary();
+            $table->increments('id_kumpulan');
             $table->integer('id_user');
             $table->integer('id_pelajaran');
-            $table->integer('nilai');
+            $table->integer('nilai')->nullable();
             $table->string('status');
-            $table->string('tugas');
+            $table->string('tugas')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });
