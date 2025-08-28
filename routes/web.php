@@ -6,6 +6,8 @@ use App\Http\Controllers\TaskController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ClassroomController;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Mail\Mailable;
 
 /*
 |--------------------------------------------------------------------------
@@ -84,6 +86,19 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::get('/role-check/{id}', [AdminController::class, 'role_check'])->name('role-check');
         Route::patch('/role-validate/{id}', [AdminController::class, 'role_validate'])->name('role-validate');
     });
+});
+
+Route::get('/test-email', function () {
+    try {
+        Mail::raw('Halo ini email percobaan dari aplikasi Laravel kamu.', function ($message) {
+            $message->to('alphrenoorz@gmail.com') // Ganti dengan email kamu
+                    ->subject('Tes Email Laravel');
+        });
+        return "Email tes berhasil dikirim (mungkin). Cek inbox!";
+    } catch (\Exception $e) {
+        // Ini akan menangkap dan menampilkan error jika ada masalah SMTP
+        return "Gagal mengirim email tes: " . $e->getMessage();
+    }
 });
 
 require __DIR__.'/auth.php';
