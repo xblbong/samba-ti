@@ -62,10 +62,10 @@ class RegisteredUserController extends Controller
             $data['id_kelas'] = $request->id_kelas;
             $data['no_hp'] = $request->no_hp;
             $data['password'] = Hash::make($request->password);
+            $data['validate'] = 'pending';
 
         $user = User::create($data);
         event(new Registered($user));
-        $user->sendEmailVerificationNotification();
 
         Auth::login($user);
 
