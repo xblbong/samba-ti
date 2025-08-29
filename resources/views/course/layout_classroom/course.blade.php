@@ -100,7 +100,6 @@
             }
 
             .footer-index {
-                margin-left: 260px;
                 transition: margin-left 0.3s ease-in-out;
             }
 
@@ -277,7 +276,7 @@
 
         <footer class="footer-index py-4 px-6 bg-white shadow-sm mt-8 w-full flex-shrink-0">
             <p class="mb-0 flex items-center w-full h-full justify-end">
-                <span class="text-gray-500 text-sm font-normal">2024 © <a href="#" class="text-indigo-600 hover:text-indigo-800 transition-colors duration-200">HMPSTI Vokasi UB</a></span>
+                <span class="text-gray-500 text-sm font-normal">2024 © <a href="#" class="text-sky-500 hover:text-sky-800 transition-colors duration-200">HMPSTI Vokasi UB</a></span>
             </p>
         </footer>
     </div>
