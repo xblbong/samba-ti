@@ -34,28 +34,28 @@
                 <form action="{{ route('register') }}" method="POST" enctype="multipart/form-data" class="form-inputs">
                     @csrf
                     <input class="w-full placeholder px-3 rounded shadow py-2" type="text" hidden name="status" value="student">
-                    <x-input-error :messages="$errors->get('foto')" class="mt-2" />
                     <div class="input-box">
-                        <input id="uploadBtn" class="input-field" :value="old('foto')" autocomplete="username" type="file" name="foto" placeholder="Foto">
+                        <input id="uploadBtn" class="input-field" autocomplete="username" type="file" name="foto" placeholder="Foto">
                         <label class="label-img" for="uploadBtn"><i class="bx bxs-camera-plus"></i> Upload Image</label>
                     </div>
- 
+                    <x-input-error :messages="$errors->get('foto')" class="mt-2" />
+                    
 
                     <div class="input-box">
-                        <input class="input-field" placeholder="Full Name" id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus autocomplete="name" />
+                        <input class="input-field" placeholder="Full Name" id="name" class="block mt-1 w-full" type="text" name="name" value="{{ old('name') }}" required autofocus autocomplete="name" />
                         <x-input-error :messages="$errors->get('name')" class="mt-2" />
                         <i class="bx bx-user icon"></i>
                     </div>
 
                     <div class="input-box">
-                        <input class="input-field" placeholder="Email" id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autocomplete="username" />
+                        <input class="input-field" placeholder="Email" id="email" class="block mt-1 w-full" type="email" name="email" value="{{ old('email') }}" required autocomplete="username" />
                         <x-input-error :messages="$errors->get('email')" class="mt-2" />
                         <i class="bx bx-envelope icon"></i>
                     </div>
 
 
                     <div class="input-box">
-                        <input class="input-field" type="text" name="nim" placeholder="NIM" required id="nim" autofocus autocomplete="nim" :value="old('nim')">
+                        <input class="input-field" type="text" name="nim" placeholder="NIM" required id="nim" autofocus autocomplete="nim" value="{{ old('nim') }}">
                         <x-input-error :messages="$errors->get('nim')" class="mt-2" />
                         <i class="bx bxs-graduation icon"></i>
                     </div>
@@ -63,9 +63,9 @@
 
                     <div class="input-box">
                         <select id="background" name="id_kelas" class="input-field" required autocomplete="background">
-                            <option value="" disabled selected hidden>Cluster</option>
+                            <option value="" disabled {{ old('id_kelas') ? '' : 'selected' }} hidden>Cluster</option>
                             @foreach ( $data as $d )
-                            <option value="{{ $d->id_kelas }}" class="select">{{ $d->nama_kelas }}</option>
+                            <option value="{{ $d->id_kelas }}" {{ old('id_kelas') == $d->id_kelas ? 'selected' : '' }} class="select">{{ $d->nama_kelas }}</option>
                             @endforeach
                         </select>
                         <x-input-error :messages="$errors->get('id_kelas')" class="mt-2" />
@@ -74,7 +74,7 @@
 
 
                     <div class="input-box">
-                        <input class="input-field" type="text" name="no_hp" placeholder="Phone Number" id="no_hp" :value="old('no_hp')" required autocomplete="username">
+                        <input class="input-field" type="text" name="no_hp" placeholder="Phone Number" id="no_hp" value="{{ old('no_hp') }}" required autocomplete="username">
                         <x-input-error :messages="$errors->get('no_hp')" class="mt-2" />
                         <i class="bx bx-phone icon"></i>
                     </div>
@@ -113,5 +113,3 @@
     <script src="{{ asset('assets/js/login.js') }}"></script>
 </body>
 </html>
-
-

@@ -40,7 +40,7 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
-            'nim' => ['required', 'integer', 'unique:'.User::class],
+            'nim' => ['required', 'integer', 'min:15','unique:'.User::class],
             'email' => ['required', 'string', 'lowercase', 'email:rfc,dns', 'max:255', 'unique:'.User::class],
             'foto' => ['required', 'mimes:png,jpg,jpeg', 'max:2048'],
             'status' => ['required', 'string', 'max:255'],
