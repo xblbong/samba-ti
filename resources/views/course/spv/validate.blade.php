@@ -86,7 +86,7 @@
             </x-danger-button>
         </div>
 
-        {{-- <button type="submit" class="flex mt-3 justify-center items-center text-lg py-1 font-semibold rounded text-white bg-red-700 w-1/2 ml-auto">DELETE ACCOUNT!!</button> --}}
+        {{-- <button type="submit" class="flex mt-3 justify-center items-center text-lg py-1 font-semibold rounded text-white bg-red-700 w-1/2 ml-auto">DELETE ACCOUNT</button> --}}
     </form>
 </x-modal>
 <script src="//unpkg.com/alpinejs" defer></script>

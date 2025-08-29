@@ -15,7 +15,7 @@
             <form class="flex w-1/2 ml-auto" method="post" action="{{ route('delete-task', ['id' => $data->id_pelajaran]) }}">
                 @csrf
                 @method('DELETE')
-                <button type="submit" class="flex mt-3 justify-center items-center text-lg py-1 font-semibold rounded text-white bg-red-700 w-1/2 ml-auto">DELETE !!</button>
+                <button type="submit" class="flex mt-3 justify-center items-center text-lg py-1 font-semibold rounded text-white bg-red-700 w-1/2 ml-auto">DELETE</button>
             </form>
         </div>
         <form method="post" action="{{ route('update-course',['id' => $data->id_pelajaran]) }}" class="mt-6 space-y-6">
