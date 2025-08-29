@@ -59,7 +59,7 @@
         <table class="w-full whitespace-nowrap min-w-full">
             <thead class="bg-gray-50 border-b border-gray-200">
                 <tr>
-                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Names</th>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Name</th>
                     <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Cluster</th>
                     <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">NIM</th>
                     <th class="text-center text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Contact</th>
