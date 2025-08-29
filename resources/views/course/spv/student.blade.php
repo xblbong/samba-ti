@@ -29,7 +29,7 @@
                 <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left">{{ $s->nama_kelas }}</td>
                 <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left">{{ $s->nim }}</td>
                 <td class="text-sm font-normal text-slate-600 py-2 px-6 text-center">
-                    <a href="https://wa.me/{{ preg_replace('/^0/', '62', $s->no_hp) }}" class="flex justify-center items-center text-sm h-8 font-normal rounded text-white bg-gradient-to-r from-cyan-300 to-violet-950 w-full mx-auto">
+                    <a href="https://wa.me/{{ preg_replace('/^0/', '62', $s->no_hp) }}" class="flex justify-center items-center text-sm h-8 font-normal rounded text-white bg-sky-500 hover:bg-sky-600 w-full mx-auto">
                     Hubungi
                 </a></td>
             </tr>
@@ -63,7 +63,7 @@
                 <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left"> {{ $d->nama_kelas }}</td>
                 <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left">{{ $d->nim }}</td>
                 <td class="text-sm font-normal text-slate-600 py-2 px-6 text-center">
-                    <a href="https://wa.me/{{ preg_replace('/^0/', '62', $d->no_hp) }}" class="flex justify-center items-center text-sm h-8 font-normal rounded text-white bg-gradient-to-r from-cyan-300 to-violet-950 w-full mx-auto">
+                    <a href="https://wa.me/{{ preg_replace('/^0/', '62', $d->no_hp) }}" class="flex justify-center items-center text-sm h-8 font-normal rounded text-white bg-purple-700 hover:bg-purple-800 w-full mx-auto">
                     Hubungi
                 </a></td>
                 @if (Auth::user()->status === 'spv' or Auth::user()->status === 'admin')
