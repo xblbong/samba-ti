@@ -1,216 +1,251 @@
 @extends('course/layout_classroom/course')
 @section('content_course')
-
-
-
-<h1 class="font-bold text-slate-600 text-3xl">MyProgress</h1>
-<div class="flex  text-sm font-normal items-center mt-1">
-    <a href="#" class="text-slate-500">Home</a>
-    <i data-feather="chevron-right" class="text-gray-400 font-bold"></i>
-    <a href="#" class="text-slate-400">MyProgress</a>
+<h1 class="font-bold text-slate-800 text-4xl mb-2">MyProgress</h1>
+<div class="flex items-center text-sm font-normal text-slate-500 mb-6">
+    <a href="#" class="hover:text-blue-600 transition-colors duration-200">Home</a>
+    <i data-feather="chevron-right" class="w-4 h-4 mx-2 text-gray-400"></i>
+    <a href="#" class="text-slate-400 cursor-default">MyProgress</a>
 </div>
 
 {{-- Overview --}}
-<div class="garis mt-5 mb-3">
-    <div class="bg-slate-100 pr-3 text-lg font-medium text-slate-600">OVERVIEW</div>
+<div class="relative flex items-center mb-6">
+    <div class="flex-grow border-t border-gray-300"></div>
+    <span class="flex-shrink mx-4 text-xl font-semibold text-slate-700 bg-white px-3 rounded-full shadow-sm">OVERVIEW</span>
+    <div class="flex-grow border-t border-gray-300"></div>
 </div>
-<div class="grid grid-cols-3 gap-5 max-[1250px]:grid-cols-2 max-[650px]:grid-cols-1">
-    <div class="p-4 bg-white shadow rounded-xl">
-        <h1 class="font-medium ">My Cluster 👩‍🎓</h1>
-        <hr class="my-3 -mx-3">
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10">
+    <div class="p-6 bg-white shadow-lg rounded-2xl border border-gray-100 transform hover:scale-102 transition-transform duration-300">
+        <h1 class="font-bold text-xl text-slate-700 mb-4">My Cluster 👩‍🎓</h1>
+        <hr class="my-4 -mx-6 border-gray-200">
         <div class="px-3">
-            <div class="garis justify-center mt-5 mb-2">
-                <div class="bg-white px-3 text-base font-medium text-slate-600 text-center">SPV</div>
+            <div class="relative flex items-center mt-5 mb-4">
+                <div class="flex-grow border-t border-gray-200"></div>
+                <span class="flex-shrink mx-3 text-sm font-medium text-slate-600 bg-white px-2 rounded-full">SUPERVISOR</span>
+                <div class="flex-grow border-t border-gray-200"></div>
             </div>
-            <div class="flex gap-2 items-center mb-1">
-                @if(isset($spv))
-                <img class="rounded-full aspect-square object-center object-cover w-9" src="{{ asset('storage/photo-profile/'.$spv->foto) }}" alt="">
-                <div class="">
-                    <h1 class="font-medium text-sm ml-2">{{ $spv->name }}</h1>
-                </div>
-                @endif
+            @if(isset($spv))
+            <div class="flex items-center gap-3 mb-4 p-2 bg-slate-50 rounded-lg">
+                <img class="rounded-full aspect-square object-cover w-11 h-11 border-2 border-blue-400 shadow-sm" src="{{ asset('storage/photo-profile/'.$spv->foto) }}" alt="Supervisor Photo">
+                <h1 class="font-semibold text-base text-slate-700">{{ $spv->name }}</h1>
             </div>
-            <div class="garis justify-center">
-                <div class="bg-white px-3 text-base font-medium text-slate-600 text-center">Anggota</div>
+            @else
+            <p class="text-sm text-slate-500 text-center py-4">No Supervisor Assigned</p>
+            @endif
+
+            <div class="relative flex items-center mt-6 mb-4">
+                <div class="flex-grow border-t border-gray-200"></div>
+                <span class="flex-shrink mx-3 text-sm font-medium text-slate-600 bg-white px-2 rounded-full">MEMBERS</span>
+                <div class="flex-grow border-t border-gray-200"></div>
             </div>
-            @foreach ($student as $stu)
-            <div class="flex gap-2 items-center mb-3">
-                <img class="rounded-full aspect-square object-center object-cover w-9" src="{{ asset('storage/photo-profile/'.$stu->foto) }}" alt="">
-                <div class="">
-                    <h1 class="font-medium text-sm ml-2">{{ $stu->name }}</h1>
-                </div>
+            @forelse ($student as $stu)
+            <div class="flex items-center gap-3 mb-3 p-1 hover:bg-slate-50 rounded-lg transition-colors duration-200">
+                <img class="rounded-full aspect-square object-cover w-9 h-9 border border-gray-200" src="{{ asset('storage/photo-profile/'.$stu->foto) }}" alt="Student Photo">
+                <h1 class="font-medium text-sm text-slate-600">{{ $stu->name }}</h1>
             </div>
-            @endforeach
+            @empty
+            <p class="text-sm text-slate-500 text-center py-4">No Members in this Cluster</p>
+            @endforelse
         </div>
-        <a href="{{ route('student') }}" class="hover:text-slate-600 flex item-center text-sm font-medium text-slate-500">More...</a>
+        <a href="{{ route('student') }}" class="mt-5 block text-center text-sm font-medium text-blue-600 hover:text-blue-800 transition-colors duration-200 flex items-center justify-end gap-1">
+            More <i data-feather="arrow-right" class="w-4 h-4"></i>
+        </a>
     </div>
-    <div class="p-4 bg-white shadow rounded-xl">
-        <h1 class="font-medium ">
+
+    <div class="p-6 bg-white shadow-lg rounded-2xl border border-gray-100 transform hover:scale-102 transition-transform duration-300">
+        <h1 class="font-bold text-xl text-slate-700 mb-4">
             @if (Auth::user()->status === 'spv' or Auth::user()->status === 'admin')
             Cluster Task 📘
             @else
             My Task 📘
             @endif
         </h1>
-        <hr class="my-3 -mx-3">
-        <div class="flex flex-wrap justify-center items-center">
-            <div class="w-[16rem]">
-                <canvas id="myChart">
-                </canvas>
+        <hr class="my-4 -mx-6 border-gray-200">
+        <div class="flex justify-center items-center py-6">
+            <div class="w-full max-w-xs md:max-w-sm">
+                <canvas id="myChart"></canvas>
             </div>
         </div>
     </div>
-    <div class="p-4 bg-white shadow rounded-xl">
-        <h1 class="font-medium mb-1">Leaderboard 🏆</h1>
-        <hr class="my-3 -mx-3">
+
+    <div class="p-6 bg-white shadow-lg rounded-2xl border border-gray-100 transform hover:scale-102 transition-transform duration-300">
+        <h1 class="font-bold text-xl text-slate-700 mb-4">Leaderboard 🏆</h1>
+        <hr class="my-4 -mx-6 border-gray-200">
         <div class="px-3">
             <?php $no = 1; ?>
-            @foreach ($leaderboard as $l)
-            <div class="flex gap-2 items-center mb-3">
-                <img class="rounded-full aspect-square object-center object-cover w-10" src="{{ asset('storage/photo-profile/'.$l->foto) }}" alt="">
-                <div class="">
-                    <h1 class="font-bold text-sm">{{ $l->name }}</h1>
+            @forelse ($leaderboard as $l)
+            <div class="flex items-center gap-3 mb-4 p-2 rounded-lg @if($no <= 3) bg-gradient-to-r from-yellow-50 to-yellow-100 @else hover:bg-slate-50 @endif transition-colors duration-200">
+                <div class="font-bold text-2xl text-slate-700 w-8 text-center">{{ $no }}</div>
+                <img class="rounded-full aspect-square object-cover w-11 h-11 border-2 @if($no == 1) border-yellow-500 @elseif($no == 2) border-gray-400 @elseif($no == 3) border-amber-600 @else border-gray-300 @endif shadow-sm" src="{{ asset('storage/photo-profile/'.$l->foto) }}" alt="Leader Photo">
+                <div class="flex-grow">
+                    <h1 class="font-bold text-base text-slate-700">{{ $l->name }}</h1>
                     <p class="text-slate-500 text-xs">{{ $l->nama_kelas }}</p>
                 </div>
-                <h1 class="ml-auto font-semibold text-slate-600 text-2xl">{{ $no++ }}</h1>
             </div>
-            @endforeach
+            <?php $no++; ?>
+            @empty
+            <p class="text-sm text-slate-500 text-center py-4">No Data on Leaderboard yet</p>
+            @endforelse
         </div>
     </div>
 </div>
 {{-- End Overview --}}
 
-{{-- Task --}}
-<div class="garis mt-10 mb-3">
-    <div class="bg-slate-100 pr-3 text-lg font-medium text-slate-600">TASK</div>
+{{-- Task Sections --}}
+<div class="relative flex items-center my-10">
+    <div class="flex-grow border-t border-gray-300"></div>
+    <span class="flex-shrink mx-4 text-xl font-semibold text-slate-700 bg-white px-3 rounded-full shadow-sm">TASK OVERVIEW</span>
+    <div class="flex-grow border-t border-gray-300"></div>
 </div>
-{{-- Open --}}
-<div class="w-full bg-white shadow z-30 rounded-xl px-3 pb-3 overflow-auto">
-    <h1 class="w-full border-b-2 border-b-[#ff6384] text-slate-600 text-base font-semibold p-4 text-left flex gap-3 mb-3">
-        Open <span><i data-feather="bar-chart-2" class="text-[#ff6384] font-bold"></i></span>
+
+{{-- list Tasks --}}
+<div class="w-full bg-white shadow-lg rounded-2xl p-6 mb-8 border border-gray-100">
+    <h1 class="w-full border-b-2 border-green-400 text-slate-700 text-xl font-bold pb-4 mb-6 flex items-center gap-3">
+        <span class="p-2 bg-green-100 rounded-full"><i data-feather="list" class="text-green-500 font-bold w-5 h-5"></i></span> Open To do List 
     </h1>
-    <table class="w-full whitespace-nowrap data-table bg-white">
-        <thead class="border-b-2 border-slate-300 w-full overflow-x-auto">
-            @if (Auth::User()->status === 'spv' or Auth::user()->status === 'admin')
-            <tr>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">Name</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-center">Total Task</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-right">Detail</th>
-            </tr>
-            @endif
-
-            @if (Auth::User()->status === 'student')
-            <tr>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">TASK</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">DUE</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">ASSIGNED TO</th>
-            </tr>
-            @endif
-
-            @foreach ($open as $o)
-
-            @if (Auth::User()->status === 'student')
-            <tr class="">
-                <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left"><a href="{{ route('detail-task', ['id'=> $o->id_pelajaran]) }}">{{ $o->nama_pelajaran }}</a></td>
-                <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left">{{ $o->deadline }}</td>
-                @if(isset($spv))
-                <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left">{{ $spv->name }}</td>
+    <div class="overflow-x-auto">
+        <table class="w-full whitespace-nowrap data-table bg-white min-w-full">
+            <thead class="bg-gray-50 border-b border-gray-200">
+                @if (Auth::User()->status === 'spv' or Auth::user()->status === 'admin')
+                <tr>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Name</th>
+                    <th class="text-center text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Total Task</th>
+                    <th class="text-right text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Detail</th>
+                </tr>
                 @endif
-            </tr>
-            @endif
-
-            @endforeach
-        </thead>
-        <tbody class="w-full">
-            <!-- DataTables will populate this area -->
-        </tbody>
-    </table>
-</div>
-
-
-{{-- end open --}}
-
-{{-- progress --}}
-<div class="w-full bg-white shadow z-30 rounded-xl mt-5 px-3 pb-3 overflow-auto">
-    <h1 class="w-full mb-3 border-b-2 border-b-[#36a2eb] text-slate-600 text-base font-semibold p-4 text-left flex gap-3">In Progress <span><i data-feather="bar-chart-2" class="text-[#36a2eb] font-bold"></i></span></h1>
-        <table class="w-full whitespace-nowrap data-table-assigned ">
-            @if (Auth::User()->status === 'spv' or Auth::user()->status === 'admin')
-            <thead class="border-b-2 border-slate-300">
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">Name</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-center">Total Task</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-right">Detail</th>
-            </thead>
-            @endif
-
-            @if (Auth::User()->status === 'student')
-            <thead class="border-b-2 border-slate-300">
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">TASK</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">DUE</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">CHECKED BY</th>
-            </thead>
-            @endif
-
-            @foreach ($assigned as $a)
-            @if (Auth::User()->status === 'student')
-            <tr class="border-t border-slate-300">
-                <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left"><a href="{{ route('detail-task', ['id'=> $a->id_pelajaran]) }}">{{ $a->nama_pelajaran }}</a></td>
-                <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left">{{ $a->deadline }}</td>
-                @if(isset($spv))
-                <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left">{{ $spv->name }}</td>
+                @if (Auth::User()->status === 'student')
+                <tr>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">TASK</th>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">DUE</th>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">ASSIGNED TO</th>
+                    <th class="text-center text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">ACTION</th> {{-- New column for detail button --}}
+                </tr>
                 @endif
-            </tr>
-            @endif
-
-            @endforeach
+            </thead>
+            <tbody>
+                @if (Auth::User()->status === 'student')
+                    @forelse ($open as $o)
+                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                        <td class="py-3 px-6 text-sm font-medium text-slate-700">{{ $o->nama_pelajaran }}</td>
+                        <td class="py-3 px-6 text-sm text-slate-600">{{ $o->deadline }}</td>
+                        <td class="py-3 px-6 text-sm text-slate-600">@if(isset($spv)) {{ $spv->name }} @else N/A @endif</td>
+                        <td class="py-3 px-6 text-center">
+                            <a href="{{ route('detail-task', ['id'=> $o->id_pelajaran]) }}" class="inline-flex items-center px-4 py-2 bg-green-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-green-600 active:bg-green-700 focus:outline-none focus:border-green-700 focus:ring ring-green-300 disabled:opacity-25 transition ease-in-out duration-150">
+                                Detail
+                            </a>
+                        </td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td colspan="4" class="text-center py-4 text-slate-500 text-sm">No list tasks at the moment.</td>
+                    </tr>
+                    @endforelse
+                @endif
+            </tbody>
         </table>
+    </div>
 </div>
-{{-- end progress --}}
 
-{{-- closed --}}
-<div class="w-full bg-white shadow z-30 rounded-xl mt-5 mb-5 px-3 pb-3">
-    <h1 class="w-full mb-3 border-b-2 border-b-[#ffcd56] text-slate-600 text-base font-semibold p-4 text-left flex gap-3">Closed <span><i data-feather="bar-chart-2" class="text-[#ffcd56] font-bold"></i></span></h1>
-        <table class="w-full whitespace-nowrap data-table-closed">
-            @if (Auth::User()->status === 'spv' or Auth::user()->status === 'admin')
-            <thead class="border-b-2 border-slate-300">
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">Name</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-center">Total Task</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-right">Detail</th>
-            </thead>
-            @endif
-
-            @if (Auth::User()->status === 'student')
-            <thead class="border-b-2 border-slate-300">
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">TASK</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">DUE</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">ASSESSED BY</th>
-                <th class="text-slate-600 text-base w-[11rem] font-semibold py-2 px-6 text-left">MARK</th>
-            </thead>
-            @endif
-
-            @foreach ($closed as $c)
-            @if (Auth::User()->status === 'student')
-            <tr class="border-t border-slate-300">
-                <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left"><a href="{{ route('detail-task', ['id'=> $c->id_pelajaran]) }}">{{ $c->nama_pelajaran }}</a></td>
-                <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left">{{ $c->deadline }}</td>
-                @if(isset($spv))
-                <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left">{{ $spv->name }}</td>
+{{-- In Progress Tasks --}}
+<div class="w-full bg-white shadow-lg rounded-2xl p-6 mb-8 border border-gray-100">
+    <h1 class="w-full border-b-2 border-blue-400 text-slate-700 text-xl font-bold pb-4 mb-6 flex items-center gap-3">
+        In Progress <span class="p-2 bg-blue-100 rounded-full"><i data-feather="loader" class="text-blue-500 font-bold w-5 h-5"></i></span>
+    </h1>
+    <div class="overflow-x-auto">
+        <table class="w-full whitespace-nowrap data-table-assigned min-w-full">
+            <thead class="bg-gray-50 border-b border-gray-200">
+                @if (Auth::User()->status === 'spv' or Auth::user()->status === 'admin')
+                <tr>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Name</th>
+                    <th class="text-center text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Total Task</th>
+                    <th class="text-right text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Detail</th>
+                </tr>
                 @endif
-                <td class="text-sm font-normal text-slate-600 py-3 px-6 text-left">{{ $c->nilai }}</td>
-            </tr>
-            @endif
-
-            @endforeach
+                @if (Auth::User()->status === 'student')
+                <tr>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">TASK</th>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">DUE</th>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">CHECKED BY</th>
+                    <th class="text-center text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">ACTION</th> {{-- New column for detail button --}}
+                </tr>
+                @endif
+            </thead>
+            <tbody>
+                @if (Auth::User()->status === 'student')
+                    @forelse ($assigned as $a)
+                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                        <td class="py-3 px-6 text-sm font-medium text-slate-700">{{ $a->nama_pelajaran }}</td>
+                        <td class="py-3 px-6 text-sm text-slate-600">{{ $a->deadline }}</td>
+                        <td class="py-3 px-6 text-sm text-slate-600">@if(isset($spv)) {{ $spv->name }} @else N/A @endif</td>
+                        <td class="py-3 px-6 text-center">
+                            <a href="{{ route('detail-task', ['id'=> $a->id_pelajaran]) }}" class="inline-flex items-center px-4 py-2 bg-blue-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-blue-600 active:bg-blue-700 focus:outline-none focus:border-blue-700 focus:ring ring-blue-300 disabled:opacity-25 transition ease-in-out duration-150">
+                                Detail
+                            </a>
+                        </td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td colspan="4" class="text-center py-4 text-slate-500 text-sm">No tasks in progress at the moment.</td>
+                    </tr>
+                    @endforelse
+                @endif
+            </tbody>
         </table>
+    </div>
 </div>
-{{-- end closed --}}
 
+{{-- Closed Tasks --}}
+<div class="w-full bg-white shadow-lg rounded-2xl p-6 mb-10 border border-gray-100">
+    <h1 class="w-full border-b-2 border-amber-400 text-slate-700 text-xl font-bold pb-4 mb-6 flex items-center gap-3">
+        Closed <span class="p-2 bg-amber-100 rounded-full"><i data-feather="check-circle" class="text-amber-500 font-bold w-5 h-5"></i></span>
+    </h1>
+    <div class="overflow-x-auto">
+        <table class="w-full whitespace-nowrap data-table-closed min-w-full">
+            <thead class="bg-gray-50 border-b border-gray-200">
+                @if (Auth::User()->status === 'spv' or Auth::user()->status === 'admin')
+                <tr>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Name</th>
+                    <th class="text-center text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Total Task</th>
+                    <th class="text-right text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">Detail</th>
+                </tr>
+                @endif
+                @if (Auth::User()->status === 'student')
+                <tr>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">TASK</th>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">DUE</th>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">ASSESSED BY</th>
+                    <th class="text-left text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">MARK</th>
+                    <th class="text-center text-sm font-semibold text-gray-600 uppercase tracking-wider py-3 px-6">ACTION</th> {{-- New column for detail button --}}
+                </tr>
+                @endif
+            </thead>
+            <tbody>
+                @if (Auth::User()->status === 'student')
+                    @forelse ($closed as $c)
+                    <tr class="border-b border-gray-100 hover:bg-gray-50">
+                        <td class="py-3 px-6 text-sm font-medium text-slate-700">{{ $c->nama_pelajaran }}</td>
+                        <td class="py-3 px-6 text-sm text-slate-600">{{ $c->deadline }}</td>
+                        <td class="py-3 px-6 text-sm text-slate-600">@if(isset($spv)) {{ $spv->name }} @else N/A @endif</td>
+                        <td class="py-3 px-6 text-sm text-slate-600">{{ $c->nilai }}</td>
+                        <td class="py-3 px-6 text-center">
+                            <a href="{{ route('detail-task', ['id'=> $c->id_pelajaran]) }}" class="inline-flex items-center px-4 py-2 bg-amber-500 border border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-amber-600 active:bg-amber-700 focus:outline-none focus:border-amber-700 focus:ring ring-amber-300 disabled:opacity-25 transition ease-in-out duration-150">
+                                Detail
+                            </a>
+                        </td>
+                    </tr>
+                    @empty
+                    <tr>
+                        <td colspan="5" class="text-center py-4 text-slate-500 text-sm">No closed tasks yet.</td>
+                    </tr>
+                    @endforelse
+                @endif
+            </tbody>
+        </table>
+    </div>
+</div>
+{{-- End Task Sections --}}
 
-{{-- End Task --}}
-
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 @if(isset($chart))
 <script>
     const ctx = document.getElementById('myChart');
@@ -224,23 +259,48 @@
             labels: chartData.label,
             data: chartData.data,
             backgroundColor: [
-            'rgb(255, 99, 132)',
-            'rgb(54, 162, 235)',
-            'rgb(255, 205, 86)'
+                'rgb(255, 187, 51)', 
+                'rgb(68, 207, 85)',
+            'rgb(51, 179, 255)' 
             ],
-            hoverOffset: 4,
+            hoverOffset: 8, 
+            borderWidth: 2,
+            borderColor: '#ffffff', 
         }]
       },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false, 
+        plugins: {
+            legend: {
+                position: 'bottom',
+                labels: {
+                    font: {
+                        size: 14 
+                    },
+                    color: '#475569' 
+                }
+            },
+            tooltip: {
+                enabled: true,
+                backgroundColor: 'rgba(0,0,0,0.8)',
+                titleColor: '#ffffff',
+                bodyColor: '#ffffff',
+                padding: 10,
+                cornerRadius: 8,
+            }
+        }
+      }
     });
   </script>
 @endif
-
-
-  <script type="text/javascript">
+<script type="text/javascript">
+    // DataTables initialization (no changes as requested, only UI improvements)
     var detailRoute = "{{ route('detail-open', ['id' => ':id']) }}";
 
     $(document).ready(function() {
     $('.data-table').DataTable({
+        responsive: true, // Enable DataTables responsiveness
         processing: true,
         serverSide: true,
         ajax: "{{ route('get-open') }}", // Replace with the correct route
@@ -254,7 +314,7 @@
                 render: function(data, type, row) {
                     // Replace ':id' with the actual row ID
                     var detailUrl = detailRoute.replace(':id', data);
-                    return '<a class="text-sm font-normal ml-auto text-right text-slate-700" href="' + detailUrl + '">Detail</a>';
+                    return '<a class="inline-flex items-center px-4 py-2 bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-gray-800 uppercase tracking-widest hover:bg-gray-300 active:bg-gray-400 focus:outline-none focus:border-gray-400 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150" href="' + detailUrl + '">Detail</a>';
                 },
                 orderable: false,
                 searchable: false
@@ -267,9 +327,10 @@
     var detailAssigned = "{{ route('detail-assigned', ['id' => ':id']) }}";
     $(document).ready(function() {
     $('.data-table-assigned').DataTable({
+        responsive: true,
         processing: true,
         serverSide: true,
-        ajax: "{{ route('get-assigned') }}", // Replace with the correct route
+        ajax: "{{ route('get-assigned') }}", 
         columns: [
 
             { data: 'name', name: 'name' },
@@ -280,7 +341,7 @@
                 render: function(data, type, row) {
                     // Replace ':id' with the actual row ID
                     var detailUrl = detailAssigned.replace(':id', data);
-                    return '<a class="text-sm font-normal ml-auto text-right text-slate-700" href="' + detailUrl + '">Detail</a>';
+                    return '<a class="inline-flex items-center px-4 py-2 bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-gray-800 uppercase tracking-widest hover:bg-gray-300 active:bg-gray-400 focus:outline-none focus:border-gray-400 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150" href="' + detailUrl + '">Detail</a>';
                 },
                 orderable: false,
                 searchable: false
@@ -293,6 +354,7 @@
 var detailClosed = "{{ route('detail-closed', ['id' => ':id']) }}";
     $(document).ready(function() {
     $('.data-table-closed').DataTable({
+        responsive: true, // Enable DataTables responsiveness
         processing: true,
         serverSide: true,
         ajax: "{{ route('get-closed') }}", // Replace with the correct route
@@ -306,7 +368,7 @@ var detailClosed = "{{ route('detail-closed', ['id' => ':id']) }}";
                 render: function(data, type, row) {
                     // Replace ':id' with the actual row ID
                     var detailUrl = detailClosed.replace(':id', data);
-                    return '<a class="text-sm font-normal ml-auto text-right text-slate-700" href="' + detailUrl + '">Detail</a>';
+                    return '<a class="inline-flex items-center px-4 py-2 bg-gray-200 border border-transparent rounded-md font-semibold text-xs text-gray-800 uppercase tracking-widest hover:bg-gray-300 active:bg-gray-400 focus:outline-none focus:border-gray-400 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150" href="' + detailUrl + '">Detail</a>';
                 },
                 orderable: false,
                 searchable: false
@@ -316,5 +378,4 @@ var detailClosed = "{{ route('detail-closed', ['id' => ':id']) }}";
     });
 });
   </script>
-
 @endsection
