@@ -186,8 +186,8 @@
                 <ul class="mt-8 p-2">
                     <form method="POST" action="{{ route('logout') }}" class="relative">
                         @csrf
-                        <button type="submit" class="nav-item flex items-center px-4 py-3 my-2 text-red-500 hover:bg-red-50 rounded-lg transition-all duration-200 ease-in-out w-full text-left">
-                            <i data-feather="log-out" class="w-5 h-5"></i><span class="ml-4 text-base font-semibold">Logout</span>
+                        <button type="submit" class="nav-item flex items-center px-4 py-3 my-2 text-red-500 hover:bg-red-500 rounded-lg transition-all duration-200 ease-in-out w-full text-left">
+                            <i data-feather="log-out" class="w-5 h-5"></i><span class="ml-4 text-base font-semibold hover:text-white">Logout</span>
                         </button>
                     </form>
                 </ul>
@@ -204,9 +204,9 @@
                 </ul>
                 <ul class="mt-8 p-2">
                     <form method="POST" action="{{ route('logout') }}" class="relative">
-                        @csrf
-                        <button type="submit" class="nav-item flex items-center px-4 py-3 my-2 text-red-500 hover:bg-red-50 rounded-lg transition-all duration-200 ease-in-out w-full text-left">
-                            <i data-feather="log-out" class="w-5 h-5"></i><span class="ml-4 text-base font-semibold">Logout</span>
+                        @csrout
+                         <button type="submit" class="nav-item flex items-center px-4 py-3 my-2 text-red-500 hover:bg-red-500 rounded-lg transition-all duration-200 ease-in-out w-full text-left">
+                            <i data-feather="log-out" class="w-5 h-5"></i><span class="ml-4 text-base font-semibold hover:text-white">Logout</span>
                         </button>
                     </form>
                 </ul>
