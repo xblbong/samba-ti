@@ -31,7 +31,7 @@
                <p class="text-white text-sm font-light">{{ $d->name }}</p>
             </div>
             <div class="p-4 flex flex-col">
-                <p class="text-gray-700 text-sm mb-2">{{ $d->deskripsi }}</p>
+                <p class="text-gray-700 text-sm mb-2">{{ strip_tags($d->deskripsi) }} </p>
                 <p class="text-gray-500 text-xs mb-4">Deadline: {{ $d->deadline }}</p>
 
                 <div class="flex justify-end space-x-2 mt-auto">

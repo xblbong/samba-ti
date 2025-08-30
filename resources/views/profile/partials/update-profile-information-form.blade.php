@@ -16,12 +16,15 @@
     <form method="post" action="{{ route('profile.update') }}" class="mt-6 space-y-6" enctype="multipart/form-data">
         @csrf
         @method('patch')
-        <img class="shadow rounded-full aspect-square object-center object-cover w-56" src="{{ asset('storage/photo-profile/'.$user->foto) }}" alt="">
+        <img id="profileImg" class="shadow rounded-full aspect-square object-center object-cover w-56" src="{{ asset('storage/photo-profile/'.$user->foto) }}" alt="">
         <div class="">
-            <label class="label-img w-1/2 gap-2 max-[550px]:w-full" for="uploadBtn"><i data-feather="camera"></i> Update Image</label>
-            <input id="uploadBtn" class="input-field" type="file" name="foto" autofocus autocomplete="name" />
-            <x-input-error class="mt-2" :messages="$errors->get('foto')" />
-        </div>
+    <label class="label-img w-1/2 gap-2 max-[550px]:w-full" for="uploadBtn"><i data-feather="camera"></i> Update Image</label>
+    <input id="uploadBtn" class="input-field" type="file" name="foto" accept="image/*" onchange="previewImage(this)" />
+    <x-input-error class="mt-2" :messages="$errors->get('foto')" />
+    <p id="imageStatus" class="text-xs mt-1"></p>
+</div>
+
+
 
         <div>
             <x-input-label for="name" :value="__('Name')" />
@@ -36,7 +39,7 @@
         </div>
         <div>
             <x-input-label for="no_hp" :value="__('Phone Number')" />
-            <x-text-input id="no_hp" name="no_hp" type="text" class="mt-1 block w-full" :value="old('no_hp', $user->no_hp)" required autofocus autocomplete="name" />
+            <x-text-input id="no_hp" name="no_hp" type="text" class="mt-1 block w-full" :value="old('no_hp', $user->no_hp)" placeholder="Contoh: 08212345678" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('no_hp')" />
         </div>
         @if (Auth::user()->status === 'admin')
@@ -91,3 +94,23 @@
         </div>
     </form>
 </section>
+
+<script>
+function previewImage(input) {
+    if (input.files && input.files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            document.getElementById('profileImg').src = e.target.result;
+        }
+        reader.readAsDataURL(input.files[0]);
+        
+        // Check if same image
+        if (input.files[0].name === '{{ $user->foto }}') {
+            document.getElementById('imageStatus').textContent = 'Gambar ini sudah diupload ya';
+            document.getElementById('imageStatus').className = 'text-xs mt-1 text-yellow-600';
+        } else {
+            document.getElementById('imageStatus').textContent = '';
+        }
+    }
+}
+</script>

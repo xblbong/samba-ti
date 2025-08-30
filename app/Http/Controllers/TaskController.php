@@ -30,7 +30,7 @@ class TaskController extends Controller
             'background' => ['required'],
         ]);
         $data['nama_pelajaran'] = $request->nama_pelajaran;
-        $data['deskripsi'] = $request->deskripsi;
+        $data['deskripsi'] = strip_tags($request->deskripsi);
         $data['deadline'] = $request->deadline;
         $data['background'] = $request->background;
 
@@ -86,7 +86,7 @@ class TaskController extends Controller
             'background' => ['required'],
         ]);
         $data['nama_pelajaran'] = $request->nama_pelajaran;
-        $data['deskripsi'] = $request->deskripsi;
+        $data['deskripsi'] = strip_tags($request->deskripsi);
         $data['deadline'] = $request->deadline;
         $data['background'] = $request->background;
 

@@ -45,7 +45,7 @@ class RegisteredUserController extends Controller
             'foto' => ['required', 'mimes:png,jpg,jpeg', 'max:2048'],
             'status' => ['required', 'string', 'max:255'],
             'id_kelas' => ['required', 'integer', 'max:255'],
-            'no_hp' => ['required', 'string', 'max:255'],
+            'no_hp' => ['required', 'string', 'regex:/^[0-9]+$/', 'max:20'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
