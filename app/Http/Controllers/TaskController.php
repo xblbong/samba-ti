@@ -22,49 +22,55 @@ class TaskController extends Controller
     }
 
     public function store(request $request){
+    $request->validate([
+        'nama_pelajaran' => ['required'],
+        'deskripsi' => ['required'],
+        'deadline' => ['required'],
+        'background' => ['required'],
+    ]);
+    
+    $data['nama_pelajaran'] = $request->nama_pelajaran;
+    $data['deskripsi'] = strip_tags($request->deskripsi);
+    $data['deadline'] = $request->deadline;
+    $data['background'] = $request->background;
 
-        $request->validate([
-            'nama_pelajaran' => ['required'],
-            'deskripsi' => ['required'],
-            'deadline' => ['required'],
-            'background' => ['required'],
-        ]);
-        $data['nama_pelajaran'] = $request->nama_pelajaran;
-        $data['deskripsi'] = strip_tags($request->deskripsi);
-        $data['deadline'] = $request->deadline;
-        $data['background'] = $request->background;
+    $pelajaran = pelajaran::create($data);
+    $pelajaranId = $pelajaran->id_pelajaran;
+    
+    // Insert ke kelas_pelajaran dengan nama variabel berbeda
+    $kelas_pelajaran_data = [
+        'id_pelajaran' => $pelajaranId,
+        'id_kelas' => Auth::user()->id_kelas,
+    ];
+    
+    $exists = DB::table('kelas_pelajaran')
+        ->where('id_pelajaran', $pelajaranId)
+        ->where('id_kelas', Auth::user()->id_kelas)
+        ->exists();
 
-        $pelajaran = pelajaran::create($data);
+    if (!$exists) {
+        DB::table('kelas_pelajaran')->insert($kelas_pelajaran_data);
+    }
 
-        $pelajaranId = $pelajaran->id_pelajaran;
-        // insert data ke tabel kelas_pelajaran
-        $data_kumpulan = [
-            'id_pelajaran' => $pelajaranId,
-            'id_kelas' => Auth::user()->id_kelas,
-        ];
-        // Simpan ke tabel 'kumpulan'
-        DB::table('kelas_pelajaran')->insert($data_kumpulan);
-
-        $profile_pelajaran = DB::table('users')
+    $profile_pelajaran = DB::table('users')
         ->select('id')
         ->where('id_kelas', '=', Auth::user()->id_kelas)
         ->get();
 
-
-        // insert data ke tabel kumpulan untuk membuat pelajaran dari user
-        foreach ($profile_pelajaran as $p) {
-            $data_kumpulan = [
-                'id_user' => $p->id,
-                'id_pelajaran' => $pelajaranId,
-                'nilai' => null,
-                'status' => 'open',
-                'tugas' => null,
-            ];
-            // Simpan ke tabel 'kumpulan'
-            DB::table('kumpulan')->insert($data_kumpulan);
-        }
-        return redirect('tugasku');
+    // Insert ke kumpulan
+    foreach ($profile_pelajaran as $p) {
+        $kumpulan_data = [
+            'id_user' => $p->id,
+            'id_pelajaran' => $pelajaranId,
+            'nilai' => null,
+            'status' => 'open',
+            'tugas' => null,
+        ];
+        DB::table('kumpulan')->insert($kumpulan_data);
     }
+    
+    return redirect('tugasku');
+}
 
     public function edit(request $request,$id_pelajaran){
         $top = DB::table('users')
